@@ -1,0 +1,1278 @@
+{
+  "meta": {
+    "project_type": "unknown",
+    "languages": [],
+    "frameworks": [],
+    "domain_hypothesis": "unknown",
+    "lifecycle": {
+      "sdlc_model": "GitHub Flow against develop branch with PR review, CI matrix gate, and semver release policy (major every ~6 months)",
+      "issue_types": [
+        "none_documented"
+      ],
+      "review_loop": {
+        "present": true,
+        "kind": "none"
+      },
+      "documentation_loop": {
+        "present": true,
+        "kind": "none"
+      },
+      "conditional_docs": {
+        "present": false,
+        "path": null,
+        "last_updated": null,
+        "entries_count": 0
+      },
+      "aiw_scripts": [],
+      "agent_definitions": {
+        "count": 0,
+        "paths": []
+      }
+    },
+    "documentation": {
+      "agents_md": null,
+      "agents_md_line_count": null,
+      "has_ai_docs": false,
+      "has_app_docs": false,
+      "has_specs": false,
+      "conditional_docs_path": null,
+      "readme_metrics": {
+        "present": true,
+        "line_count": 0,
+        "section_count": 44,
+        "path": "Readme.md"
+      },
+      "ai_docs_freshness": {
+        "last_updated": null,
+        "file_count": 0
+      },
+      "specs_archive": {
+        "present": false,
+        "file_count": 0,
+        "date_range": null
+      },
+      "postmortems_dir": null,
+      "changelog_present": false,
+      "in_depth_guides": [
+        {
+          "path": "docs/options-in-depth.md",
+          "topic": "options"
+        },
+        {
+          "path": "docs/help-in-depth.md",
+          "topic": "help"
+        },
+        {
+          "path": "docs/parsing-and-hooks.md",
+          "topic": "parsing and hooks"
+        },
+        {
+          "path": "docs/terminology.md",
+          "topic": "terminology"
+        },
+        {
+          "path": "docs/release-policy.md",
+          "topic": "release policy"
+        },
+        {
+          "path": "docs/deprecated.md",
+          "topic": "deprecated APIs"
+        }
+      ],
+      "translations": [
+        {
+          "path": "Readme_zh-CN.md",
+          "lang": "zh-CN"
+        }
+      ]
+    }
+  },
+  "skeleton": {
+    "top_level_tree": [
+      ".agentify/",
+      ".editorconfig",
+      ".git/",
+      ".gitattributes",
+      ".github/",
+      ".gitignore",
+      ".prettierignore",
+      ".prettierrc.js",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "docs/",
+      "eslint.config.js",
+      "examples/",
+      "index.js",
+      "lib/",
+      "LICENSE",
+      "package-lock.json",
+      "package-support.json",
+      "package.json",
+      "Readme.md",
+      "Readme_zh-CN.md",
+      "SECURITY.md",
+      "tests/",
+      "tsconfig.js.json",
+      "tsconfig.json",
+      "tsconfig.ts.json",
+      "typings/"
+    ],
+    "entry_points": [
+      {
+        "path": "index.js",
+        "role": "Public ESM entry — re-exports Command/Option/Argument/Help/Error classes plus singleton `program` and createCommand/createOption/createArgument factories",
+        "language": "javascript",
+        "run_command": "node index.js"
+      },
+      {
+        "path": "lib/command.js",
+        "role": "Core Command class (EventEmitter) — option/argument registration, parsing, subcommand tree, executable subcommand lookup, lifecycle hooks, exit handling",
+        "language": "javascript",
+        "run_command": "node --test tests/"
+      },
+      {
+        "path": "typings/index.d.ts",
+        "role": "TypeScript public surface — type-checks tsd against typings/index.test-d.ts; consumed by downstream users",
+        "language": "typescript",
+        "run_command": "tsd"
+      }
+    ],
+    "code_test_mirror": {
+      "observed": false,
+      "pattern": "unknown"
+    },
+    "first_5_files_for_fresh_agent": [
+      {
+        "path": "Readme.md",
+        "why": "Authoritative usage overview (installation, options, arguments, commands, help, TypeScript)"
+      },
+      {
+        "path": "package.json",
+        "why": "Scripts (test/check/fix), engines (node>=22.12.0), module type, exports, zero production dependencies"
+      },
+      {
+        "path": "index.js",
+        "why": "Public surface: re-exports + default program singleton"
+      },
+      {
+        "path": "lib/command.js",
+        "why": "Largest internal module — the heart of parse(), help, hooks, executable subcommands"
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "why": "Process expectations: PRs to develop, run npm run test + check, no CHANGELOG/version edits, zero-dependency policy"
+      }
+    ],
+    "app_vs_agentic_layer": {
+      "app_layer": "unknown",
+      "agentic_layer": null,
+      "bleed_risk_paths": []
+    }
+  },
+  "module_graph": {
+    "edges": [
+      {
+        "from": "lib/command.js",
+        "to": "lib/argument.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/error.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/help.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/option.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/suggestSimilar.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/option.js",
+        "to": "lib/error.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/argument.js",
+        "to": "lib/error.js",
+        "kind": "import"
+      },
+      {
+        "from": "lib/help.js",
+        "to": "lib/argument.js",
+        "kind": "import"
+      }
+    ],
+    "parallelizable_subtrees": [
+      [
+        "lib/error.js",
+        "lib/suggestSimilar.js"
+      ],
+      [
+        "lib/argument.js",
+        "lib/option.js"
+      ],
+      [
+        "lib/help.js"
+      ]
+    ],
+    "shared_state": [],
+    "client_server_split": null,
+    "shared_abstractions": [
+      "lib/error.js"
+    ]
+  },
+  "type_contract_surface": {
+    "pydantic_models": [],
+    "typescript_interfaces": [
+      {
+        "path": "typings/index.d.ts",
+        "name": "ErrorOptions",
+        "fields": [
+          "code?: string",
+          "exitCode?: number"
+        ]
+      },
+      {
+        "path": "typings/index.d.ts",
+        "name": "Command",
+        "fields": [
+          "commands",
+          "options",
+          "args",
+          "rawArgs",
+          "processedArgs",
+          "_optionValues",
+          "_actionHandler",
+          "_exitCallback",
+          "_lifeCycleHooks",
+          "_outputConfiguration",
+          "_helpOption"
+        ]
+      }
+    ],
+    "db_models": [],
+    "idks": [],
+    "stable_types": [],
+    "volatile_types": [],
+    "one_type_trace": null
+  },
+  "conventions": {
+    "naming": {
+      "files": "lowercase single-word (argument.js, command.js, error.js, help.js, option.js) or camelCase for multi-word (suggestSimilar.js). One primary class per file.",
+      "classes": "unknown",
+      "functions": "camelCase verbs/nouns (humanReadableArgName, editDistance, suggestSimilar). Underscore prefix marks truly private (_registerOption, _prepareForParse, _exit, _getHelpCommand).",
+      "branches": "unknown",
+      "commits": "unknown"
+    },
+    "error_handling": {
+      "raise_vs_return": "raise",
+      "custom_exceptions": false,
+      "log_then_throw": false
+    },
+    "logging": {
+      "pattern": "none — CLI library; no application logging. User-facing output goes through configurable _outputConfiguration.writeOut/writeErr/outputError sinks (default process.stdout/stderr).",
+      "observed": false
+    },
+    "state_passing": "constructor_injection",
+    "file_size": {
+      "observed_avg": 0,
+      "observed_max": 0
+    },
+    "patterns": []
+  },
+  "pitfalls": [
+    {
+      "module": "lib/command.js",
+      "what": "Optional option-argument value is silently consumed as null when the next argv token looks like any option; --foo --bar produces foo=null, bar=true with no warning.",
+      "consequence": "Users who miss a space or have a shell that re-tokenizes see a silent null and downstream TypeError far from the bug origin.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1814
+    },
+    {
+      "module": "lib/command.js",
+      "what": "parseOptions only treats negative numbers as arguments when no ancestor has a matching numeric short flag (e.g. -1); the check walks every ancestor on every token.",
+      "consequence": "Adding a short flag -1 anywhere in the command tree silently flips -1 from numeric argument to option, breaking downstream consumers; deep trees pay O(ancestors x options) per token.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1771
+    },
+    {
+      "module": "lib/command.js",
+      "what": "-- literal-handling mutates behavior based on current dest: when dest=unknown, -- is pushed; when dest=operands, -- is dropped silently.",
+      "consequence": "After an unknown option, -- stops acting as the everything-after-is-positional sentinel and positional args get silently reclassified.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1792
+    },
+    {
+      "module": "lib/command.js",
+      "what": "Combo short flags -abc are processed char by char via activeGroup; if any middle char is not a registered option the leftover is reclassified (as operand with passThrough, or as unknown without).",
+      "consequence": "Behavior diverges based on a flag users rarely set; non-deterministic-looking parse trees.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1829
+    },
+    {
+      "module": "lib/option.js",
+      "what": "Option constructor decides required/optional purely by flags.includes('<') / flags.includes('['); any stray bracket flips the type silently.",
+      "consequence": "Misformatted flag string (e.g. -x, --extra <type with no closing >) is treated as required; failures occur at parse time, not at registration.",
+      "source_reference": "lib/option.js",
+      "line_ref": 18
+    },
+    {
+      "module": "lib/argument.js",
+      "what": "Argument constructor switch on name[0] treats any name not starting with < or [ as required; name.slice(1,-1) is applied unconditionally.",
+      "consequence": "argument('<thing') (missing closing >) yields empty _name; argument('<>') becomes a required empty-name argument that silently swallows any positional.",
+      "source_reference": "lib/argument.js",
+      "line_ref": 26
+    },
+    {
+      "module": "lib/argument.js",
+      "what": "choices() overwrites this.parseArg with an internal closure; any prior .argParser() call is silently discarded.",
+      "consequence": "argParser(parseInt).choices([...]) runs only the choices validator; non-string inputs bypass parseInt and fail with Allowed choices are... — no chaining.",
+      "source_reference": "lib/argument.js",
+      "line_ref": 101
+    },
+    {
+      "module": "lib/command.js",
+      "what": "_storeOptionsAsProperties (legacy mode) reads options from this[key]; user code that does program.foo = 42 silently corrupts the parsed value and defeats getOptionValueSource.",
+      "consequence": "Legacy mode is no longer tamper-evident; buggy middleware makes getOptionValueSource lie about origin, defeating conflict detection and env-priority logic.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1875
+    },
+    {
+      "module": "lib/command.js",
+      "what": "Deprecated APIs still wired in: _args (alias for registeredArguments), noHelp (alias for hidden), addHelpCommand 2nd-arg deprecated, RegExp arg-parser wrapped silently, outputHelp callback form, this.emit(--help).",
+      "consequence": "Consumers relying on legacy names work but are on a slow-deprecation path; PRs touching those branches need deprecation comment in CHANGELOG and may want a runtime warning.",
+      "source_reference": "lib/command.js",
+      "line_ref": 32
+    }
+  ],
+  "validation_surface": {
+    "test_command": "npm test",
+    "test_runtime_seconds_estimate": 0,
+    "lint_command": "npm run check:lint",
+    "typecheck_command": "npm run check:type",
+    "e2e_command": null,
+    "spec_compliance_evidence": [],
+    "severity_taxonomy": [],
+    "per_change_type": {
+      "chore": {
+        "mandatory": [
+          "npm run check:format",
+          "npm run check:lint",
+          "npm test"
+        ],
+        "optional": [
+          "npm run check:type"
+        ]
+      },
+      "bug": {
+        "mandatory": [
+          "npm run check:format",
+          "npm run check:lint",
+          "npm test"
+        ],
+        "optional": [
+          "npm run check:type",
+          "Add regression test under tests/*.test.{js,mjs,cjs}"
+        ]
+      },
+      "feature": {
+        "mandatory": [
+          "npm run check:format",
+          "npm run check:lint",
+          "npm test",
+          "npm run check:type"
+        ],
+        "optional": [
+          "Add tests under tests/*.test.{js,mjs,cjs}",
+          "Update typings/index.d.ts (consumed by tsd)",
+          "Update JSDoc in lib/*.js (picked up by tsc -p tsconfig.js.json via checkJs)"
+        ]
+      }
+    },
+    "test_command_long": "node --test && npm run check:type:ts",
+    "lint_command_long": "eslint .",
+    "typecheck_command_long": "tsc -p tsconfig.js.json && tsd && tsc -p tsconfig.ts.json",
+    "format_command": "npm run check:format",
+    "format_command_long": "prettier --check .",
+    "ci_matrix": {
+      "node_versions": [
+        "22.x",
+        "24.x",
+        "26.x"
+      ],
+      "os": [
+        "ubuntu-latest",
+        "windows-latest",
+        "macos-latest"
+      ]
+    }
+  },
+  "operational_surface": {
+    "build": {
+      "command": "(none — pure JS ESM library, no build step)",
+      "recipe_file": "unknown"
+    },
+    "run": {
+      "command": "npm test",
+      "env_vars_required": [],
+      "ports": [],
+      "services": [],
+      "dependencies": []
+    },
+    "deploy": null,
+    "env_vars": [],
+    "ci_cd": {
+      "triggers": [],
+      "gates": [],
+      "artifacts": []
+    },
+    "git_workflow": {
+      "main_branch": "develop",
+      "branch_naming": "unknown",
+      "worktree_pattern": "unknown",
+      "cleanup": "unknown"
+    },
+    "port_ranges": {
+      "dev": "unknown"
+    },
+    "shutdown_procedure": {
+      "script": null,
+      "commands": []
+    },
+    "spawned_subprocesses": []
+  },
+  "security_surface": {
+    "paths": {
+      "zero_access": [
+        ".agentify/state-transactions/**",
+        ".agentify/policies/**",
+        ".git/**"
+      ],
+      "read_only": [
+        ".agentify/manifest.json",
+        ".agentify/agents/**",
+        ".github/**",
+        "package.json",
+        "package-lock.json",
+        "LICENSE",
+        "SECURITY.md",
+        "CHANGELOG.md"
+      ],
+      "no_delete": [
+        ".git/**",
+        ".gitignore",
+        ".agentify/.gitignore",
+        ".agentify/manifest.json",
+        "package.json",
+        "package-lock.json"
+      ],
+      "fully_writable": []
+    },
+    "bash_safe_patterns": [],
+    "bash_blocked_patterns": [
+      "rm\\s+(-rf|-r|-f|--recursive)\\s+/",
+      "git\\s+push\\s+(--force|-f)",
+      "git\\s+reset\\s+--hard",
+      "chmod\\s+(\\+x|777|666)\\s+",
+      "curl\\s.*\\s-T\\s",
+      "\\bnc\\b\\s+-l",
+      "\\bnetcat\\b",
+      "\\bsudo\\b",
+      "\\bcrontab\\b",
+      "dd\\s+of=/dev/",
+      "\\bmkfs(\\.|\\s)",
+      "\\bshutdown\\b|\\bpoweroff\\b|\\breboot\\b",
+      "^git\\s+push\\b(?!.*\\b--dry-run\\b)",
+      "^npm\\s+publish\\b",
+      "^npm\\s+install\\s+(--global|-g)\\b",
+      "^pip\\s+install\\b",
+      "^chmod\\s+0?[0-7]{3,4}\\s+/",
+      "^>\\s*/etc/",
+      ":\\(\\)\\s*\\{.*\\};:\\s*"
+    ],
+    "banned_interpreters": [],
+    "env_allowlist": [],
+    "production_credentials": [],
+    "damage_control_rules": [
+      "block git push without --dry-run",
+      "block npm publish",
+      "block global npm install",
+      "block pip install",
+      "block chmod with absolute mode on root path",
+      "block redirect into /etc/",
+      "block fork-bomb patterns",
+      "block destructive rm on /",
+      "block git reset --hard"
+    ],
+    "security_checklist": {
+      "tools": [],
+      "commands": [],
+      "paths": [],
+      "env": [],
+      "blocks": [],
+      "logs": []
+    },
+    "credential_boundaries": {
+      "production_credentials": "",
+      "production_credentials_confirmed_empty": true
+    }
+  },
+  "coverage": {
+    "D1_topography": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "commander.js v15 entry is index.js → lib/command.js; full topo mapped with entry points and fresh-agent reading order.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"main\": \"./index.js\", \"type\": \"module\", exports points types to typings/index.d.ts and default to ./index.js",
+          "kind": "positive"
+        },
+        {
+          "path": "index.js",
+          "excerpt": "export const program = new Command(); re-exports Command, Option, Argument, Help, CommanderError, InvalidArgumentError",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "export class Command extends EventEmitter { constructor(name) { super(); ... }",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D2_module_boundaries": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "lib/command.js orchestrates 5 leaves; lib/error.js is the lone shared abstraction across all modules.",
+      "evidence": [
+        {
+          "path": "lib/command.js",
+          "excerpt": "import { Argument, humanReadableArgName } from './argument.js'; import { CommanderError } from './error.js'; import { Help } from './help.js'; import { Option, DualOptions } from './option.js'; import { suggestSimilar } from './suggestSimilar.js';",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/argument.js",
+          "excerpt": "import { InvalidArgumentError } from './error.js';",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/option.js",
+          "excerpt": "import { InvalidArgumentError } from './error.js';",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D3_type_contract": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Command class is JS-defined in lib/command.js and mirrored in typings/index.d.ts; public surface re-exported via index.js.",
+      "evidence": [
+        {
+          "path": "typings/index.d.ts",
+          "excerpt": "export class Command extends EventEmitter { ... commands: Command[], options: Option[], args: string[], ... }",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "export class Command extends EventEmitter { constructor(name) { super(); this.commands = []; this.options = []; ... }",
+          "kind": "positive"
+        },
+        {
+          "path": "index.js",
+          "excerpt": "export { Command, Option, Argument, Help }; export const program = new Command();",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D4_conventions": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Commander.js: one class per file, ESM only, JSDoc-heavy, no logging, custom error hierarchy, all mutators chainable.",
+      "evidence": [
+        {
+          "path": "lib/command.js",
+          "excerpt": "command() { ... return cmd; } // and every mutator ends with `return this` for chaining",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/help.js",
+          "excerpt": "@typedef { import(\"./argument.js\").Argument } Argument; @typedef { import(\"./command.js\").Command } Command; @typedef { import(\"./option.js\").Option } Option;",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/error.js",
+          "excerpt": "export class CommanderError extends Error { constructor(exitCode, code, message) { super(message); ... this.code = code; this.exitCode = exitCode; this.nestedError = undefined; } }",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "writeOut: (str) => process.stdout.write(str), writeErr: (str) => process.stderr.write(str), outputError: (str, write) => write(str), stripColor: (str) => stripVTControlCharacters(str),",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D5_pitfalls": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Substantive parser-level risks across lib/command.js, lib/option.js, lib/argument.js — silent nulls, flag-shape assumptions, deprecated aliases.",
+      "evidence": [
+        {
+          "path": "lib/command.js",
+          "excerpt": "optional option-argument: --foo --bar produces foo=null with no warning (lib/command.js:1814-1821)",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/option.js",
+          "excerpt": "Option constructor sets required based on flags.includes('<') / optional on flags.includes('['); stray bracket flips the option type silently (lib/option.js:18-19)",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/argument.js",
+          "excerpt": "argument('<thing') (missing closing >) yields empty _name because of slice(1,-1) (lib/argument.js:26-39)",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D6_validation": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "npm test (node --test + tsd) + npm run check (eslint, prettier, tsc x2) — all four mandatory for any change; CI runs a 3x3 matrix.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"check\": \"npm run check:type && npm run check:lint && npm run check:format\", \"check:type\": \"npm run check:type:js && npm run check:type:ts\", \"test\": \"node --test && npm run check:type:ts\"",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/workflows/tests.yml",
+          "excerpt": "matrix: node-version: [22.x, 24.x, 26.x]; os: [ubuntu-latest, windows-latest, macos-latest]; steps run npm ci, npm test, npm run check",
+          "kind": "positive"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "Check the tests succeed, including format and lint. npm run test; npm run check.",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D7_operational": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "commander.js is a CLI parser library — no build step, no ports/services; npm test + npm run check is the operational gate; PRs target develop.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"engines\": { \"node\": \">=22.12.0\" }, \"type\": \"module\", \"main\": \"./index.js\"; no build script",
+          "kind": "positive"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "Please submit pull requests against the develop branch.",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/PULL_REQUEST_TEMPLATE.md",
+          "excerpt": "Please submit pull requests against the develop branch.",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D8_security": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Zero-access for .git internals and .agentify runtime; manifest is integrity anchor; bash_blocked covers destructive ops; no production credentials.",
+      "evidence": [
+        {
+          "path": "SECURITY.md",
+          "excerpt": "To report a security vulnerability, please use the Tidelift security contact.",
+          "kind": "positive"
+        },
+        {
+          "path": "package.json",
+          "excerpt": "\"type\": \"module\", \"engines\": { \"node\": \">=22.12.0\" }; no production deps",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "childProcess.spawn uses stdio:'inherit' only — no shell:true (lib/command.js:1286, 1288, 1299)",
+          "kind": "positive"
+        },
+        {
+          "path": ".agentify/policies",
+          "excerpt": "Self-update allowlist (declared dependency)",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D9_process": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "GitHub Flow against develop branch; PR review; no issue templates; semver release policy with major every ~6 months.",
+      "evidence": [
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "Please submit pull requests against the develop branch. Follow the existing code style. Check the tests succeed, including format and lint. npm run test; npm run check.",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/PULL_REQUEST_TEMPLATE.md",
+          "excerpt": "Please submit pull requests against the develop branch. Follow the existing code style. Check the tests succeed, including format and lint.",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/dependabot.yml",
+          "excerpt": "target-branch: \"develop\" for both npm and github-actions ecosystems",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/release-policy.md",
+          "excerpt": "We follow Semantic Versioning, and limit breaking changes to major versions. There are major releases about every six months.",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/ISSUE_TEMPLATE/",
+          "excerpt": "No issue templates directory",
+          "kind": "absence"
+        },
+        {
+          "path": ".pi/",
+          "excerpt": "No agentic layer directory found",
+          "kind": "absence"
+        },
+        {
+          "path": "aiws/",
+          "excerpt": "No agentic layer directory found",
+          "kind": "absence"
+        },
+        {
+          "path": "specs/",
+          "excerpt": "No specs directory found",
+          "kind": "absence"
+        },
+        {
+          "path": "agents/",
+          "excerpt": "No agentic layer directory at repo root",
+          "kind": "absence"
+        }
+      ]
+    },
+    "D10_documentation": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Readme.md is authoritative (~1170 lines, 44 sections); docs/ has 5 in-depth guides; Readme_zh-CN.md has Chinese translation; no AI/specs/app_docs.",
+      "evidence": [
+        {
+          "path": "Readme.md",
+          "excerpt": "44 ##/### headings covering Installation, Options, Help, Commands, Action handler, Life cycle hooks, TypeScript, etc.",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/options-in-depth.md",
+          "excerpt": "Options in-depth companion guide",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/help-in-depth.md",
+          "excerpt": "Help in-depth companion guide",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/parsing-and-hooks.md",
+          "excerpt": "Parsing and hooks companion guide",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/release-policy.md",
+          "excerpt": "Semantic Versioning, major releases about every six months",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/deprecated.md",
+          "excerpt": "Deprecated APIs reference",
+          "kind": "positive"
+        },
+        {
+          "path": "Readme_zh-CN.md",
+          "excerpt": "Simplified Chinese translation of Readme",
+          "kind": "positive"
+        },
+        {
+          "path": "app_docs/",
+          "excerpt": "No app_docs directory found",
+          "kind": "absence"
+        },
+        {
+          "path": "ai_docs/",
+          "excerpt": "No ai_docs directory found",
+          "kind": "absence"
+        }
+      ]
+    }
+  },
+  "open_questions": [
+    "Initial draft: gather repository evidence before closing coverage."
+  ],
+  "exploration_log": [
+    {
+      "ts": "2026-08-21T13:43:14.997Z",
+      "action": "draft_bootstrap",
+      "target": ".",
+      "observation": "Created an honest gap-marked map to receive incremental audit evidence."
+    },
+    {
+      "ts": "2026-08-21T13:43:50.533Z",
+      "action": "gap_filler_delta",
+      "target": "D1_topography",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:43:50.535Z",
+      "action": "gap_filler_delta",
+      "target": "D1_topography",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:44:09.611Z",
+      "action": "gap_filler_delta",
+      "target": "D2_module_boundaries",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:44:09.611Z",
+      "action": "gap_filler_delta",
+      "target": "D2_module_boundaries",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:45:42.800Z",
+      "action": "gap_filler_delta",
+      "target": "D3_type_contract",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:45:42.802Z",
+      "action": "gap_filler_delta",
+      "target": "D3_type_contract",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:46:30.050Z",
+      "action": "gap_filler_delta",
+      "target": "D4_conventions",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:46:30.050Z",
+      "action": "gap_filler_delta",
+      "target": "D4_conventions",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:48:37.288Z",
+      "action": "gap_filler_delta",
+      "target": "D5_pitfalls",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:49:04.026Z",
+      "action": "gap_filler_delta",
+      "target": "D6_validation",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:49:04.027Z",
+      "action": "gap_filler_delta",
+      "target": "D6_validation",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:49:29.197Z",
+      "action": "gap_filler_delta",
+      "target": "D7_operational",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:49:29.197Z",
+      "action": "gap_filler_delta",
+      "target": "D7_operational",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:50:13.093Z",
+      "action": "gap_filler_delta",
+      "target": "D8_security",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:50:13.094Z",
+      "action": "gap_filler_delta",
+      "target": "D8_security",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:50:41.083Z",
+      "action": "gap_filler_delta",
+      "target": "D9_process",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:50:41.084Z",
+      "action": "gap_filler_delta",
+      "target": "D9_process",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:51:01.803Z",
+      "action": "gap_filler_delta",
+      "target": "D10_documentation",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-21T13:51:01.804Z",
+      "action": "gap_filler_delta",
+      "target": "D10_documentation",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-21T13:59:49.766Z",
+      "action": "gap_filler_delta",
+      "target": "(no-dim)",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    }
+  ],
+  "schema_version": "1",
+  "generated_at": "2026-08-21T13:43:14.997Z",
+  "expert_evidence": {
+    "expert_domains": [
+      {
+        "domain": "option-parsing",
+        "rationale": "Option class is the largest dedicated module (lib/option.js ~580 lines), encapsulates flag-shape parsing (short/long/required/optional/variadic/mandatory), default/preset/choices/parseArg/conflicts/implies/env/DualOptions semantics, and is the high-stakes area where most parser bugs originate. ~20+ dedicated test files cover the surface.",
+        "primary_paths": [
+          "lib/option.js"
+        ],
+        "entry_points": [
+          "lib/option.js"
+        ],
+        "test_paths": [
+          "tests/options.bool.test.js",
+          "tests/options.bool.combo.test.js",
+          "tests/options.bool.small.combined.test.js",
+          "tests/options.choices.test.js",
+          "tests/options.conflicts.test.js",
+          "tests/options.custom-processing.test.js",
+          "tests/options.default.test.js",
+          "tests/options.dual-options.test.js",
+          "tests/options.env.test.js",
+          "tests/options.flags.test.js",
+          "tests/options.getset.test.js",
+          "tests/options.implies.test.js",
+          "tests/options.mandatory.test.js",
+          "tests/options.optional.test.js",
+          "tests/options.opts.test.js",
+          "tests/options.optsWithGlobals.test.js",
+          "tests/options.preset.test.js",
+          "tests/options.registerClash.test.js",
+          "tests/options.required.test.js",
+          "tests/options.twice.test.js",
+          "tests/options.values.test.js",
+          "tests/options.variadic.test.js",
+          "tests/options.version.test.js",
+          "tests/option.bad-flags.test.js",
+          "tests/option.chain.test.js"
+        ],
+        "key_files": [
+          {
+            "path": "lib/option.js",
+            "purpose": "Option class — flag parsing, defaults, presets, choices, conflicts, implies, env, parseArg, DualOptions",
+            "line_range": [
+              1,
+              580
+            ]
+          }
+        ],
+        "key_types": [
+          {
+            "name": "Option",
+            "path": "typings/index.d.ts",
+            "purpose": "Public Option type with flags/short/long/required/optional/variadic/mandatory/default/presetArg/envVar/parseArg/choices/conflictsWith/implied/helpGroupHeading"
+          },
+          {
+            "name": "DualOptions",
+            "path": "lib/option.js",
+            "purpose": "Pair of --foo / --no-foo options with preset-based source detection"
+          }
+        ],
+        "patterns": [
+          {
+            "name": "flag-string-parsing",
+            "description": "flags.includes('<') and flags.includes('[') decide required vs optional; /\\w\\.\\.\\.[>\\]]$/ detects variadic; splitOptionFlags extracts short/long.",
+            "example_ref": "lib/option.js:18-19"
+          },
+          {
+            "name": "value-source-tracking",
+            "description": "_optionValueSources records whether a value came from default, env, config, cli, or imputed (implied) — used for precedence and getOptionValueSource().",
+            "example_ref": "lib/command.js (Option listeners)"
+          }
+        ],
+        "pitfalls": [
+          {
+            "risk": "flags.includes('<') / flags.includes('[') silently flip an option's required/optional type on any typo.",
+            "consequence": "Misformatted flag strings (e.g. --extra <type with no closing >) become required; failures surface at parse time, not at registration.",
+            "reference": "lib/option.js:18-19"
+          },
+          {
+            "risk": "DualOptions preset ambiguity.",
+            "consequence": "If a custom preset on --no-foo matches --foo's default, getOptionValueSource('foo') returns 'default' instead of 'cli', defeating precedence logic.",
+            "reference": "lib/option.js:241-258"
+          }
+        ],
+        "conventions": [
+          "One class per file; module filename matches primary export in lowercase/camelCase.",
+          "ESM only; relative imports carry .js suffix; node: prefix on built-ins.",
+          "Mutators return this for chaining.",
+          "Errors are CommanderError subclasses with exitCode/code/nestedError; user-facing errors include bulleted remediation hints after a newline."
+        ],
+        "stability": "high",
+        "recurrence": "high",
+        "test_command": "npm test",
+        "last_updated": "2026-01-01T00:00:00.000Z"
+      },
+      {
+        "domain": "command-tree",
+        "rationale": "Command class (lib/command.js ~2791 lines) is the orchestration hub: registration (option/argument/command), parsing pipeline (parseOptions/parseArgs), subcommand dispatch, executable subcommand lookup via childProcess.spawn, action handlers, lifecycle hooks, exit handling, configurable output, save/restoreStateBeforeParse. ~40+ dedicated test files.",
+        "primary_paths": [
+          "lib/command.js"
+        ],
+        "entry_points": [
+          "lib/command.js"
+        ],
+        "test_paths": [
+          "tests/command.action.test.js",
+          "tests/command.addCommand.test.js",
+          "tests/command.alias.test.js",
+          "tests/command.allowExcessArguments.test.js",
+          "tests/command.allowUnknownOption.test.js",
+          "tests/command.argumentVariations.test.js",
+          "tests/command.asterisk.test.js",
+          "tests/command.chain.test.js",
+          "tests/command.commandHelp.test.js",
+          "tests/command.configureHelp.test.js",
+          "tests/command.configureOutput.test.js",
+          "tests/command.copySettings.test.js",
+          "tests/command.createArgument.test.js",
+          "tests/command.createHelp.test.js",
+          "tests/command.createOption.test.js",
+          "tests/command.default.test.js",
+          "tests/command.description.test.js",
+          "tests/command.error.test.js",
+          "tests/command.executableSubcommand.test.js",
+          "tests/command.exitOverride.test.js",
+          "tests/command.help.test.js",
+          "tests/command.helpCommand.test.js",
+          "tests/command.helpOption.test.js",
+          "tests/command.hook.test.js",
+          "tests/command.name.test.js",
+          "tests/command.nested.test.js",
+          "tests/command.onCommand.test.js",
+          "tests/command.option-misuse.test.js",
+          "tests/command.parse.test.js",
+          "tests/command.parseOptions.test.js",
+          "tests/command.positionalOptions.test.js",
+          "tests/command.registerClash.test.js",
+          "tests/command.showHelpAfterError.test.js",
+          "tests/command.showSuggestionAfterError.test.js",
+          "tests/command.summary.test.js",
+          "tests/command.unknownCommand.test.js",
+          "tests/command.unknownOption.test.js",
+          "tests/command.usage.test.js",
+          "tests/commander.storeOptionsAsProperties.test.js",
+          "tests/createCommand.test.js",
+          "tests/args.literal.test.js",
+          "tests/args.variadic.test.js",
+          "tests/incrementNodeInspectorPort.test.cjs"
+        ],
+        "key_files": [
+          {
+            "path": "lib/command.js",
+            "purpose": "Command class — registration, parse pipeline, subcommand dispatch, executable subcommands via childProcess.spawn, action handlers, lifecycle hooks, exit handling",
+            "line_range": [
+              1,
+              2791
+            ]
+          }
+        ],
+        "key_types": [
+          {
+            "name": "Command",
+            "path": "typings/index.d.ts",
+            "purpose": "Public Command type — fluent builder, parse(), help, hooks, subcommands"
+          },
+          {
+            "name": "HookEvent",
+            "path": "typings/index.d.ts",
+            "purpose": "Hook event id type for addHook('preAction'|'postAction'|...)"
+          },
+          {
+            "name": "OptionValues",
+            "path": "typings/index.d.ts",
+            "purpose": "Parsed options container returned by opts()/optsWithGlobals()"
+          }
+        ],
+        "patterns": [
+          {
+            "name": "copyInheritedSettings",
+            "description": "Subcommand inherits output/help/exit/_storeOptionsAsProperties/_combineFlagAndOptionalValue/etc from parent on attachment.",
+            "example_ref": "lib/command.js:103-126"
+          },
+          {
+            "name": "factory-methods-for-extension",
+            "description": "createCommand, createArgument, createOption, createHelp allow subclasses to swap implementation without overriding constructors.",
+            "example_ref": "lib/command.js:198"
+          },
+          {
+            "name": "EventEmitter-as-option-bus",
+            "description": "addOption registers on('option:'+oname) and on('optionEnv:'+oname) listeners; parsing, env, and implied-option logic share one setOptionValueWithSource path.",
+            "example_ref": "lib/command.js:444"
+          },
+          {
+            "name": "parse-source-auto-detect",
+            "description": "_prepareUserArgs picks argv source from process.versions?.electron (Electron), execArgv.includes('--print') (node --print), or process.argv slice — magic that is invisible to the caller.",
+            "example_ref": "lib/command.js:999-1012"
+          }
+        ],
+        "pitfalls": [
+          {
+            "risk": "Silent null for optional option-argument when next token looks like an option (--foo --bar yields foo=null, bar=true).",
+            "consequence": "Mis-tokenized argv produces nulls with no warning, surfacing as downstream TypeErrors far from the bug origin.",
+            "reference": "lib/command.js:1814-1821"
+          },
+          {
+            "risk": "Combo short flag -abc reclassifies unknown middle chars differently based on _passThroughOptions.",
+            "consequence": "Non-deterministic-looking parse trees depending on a rarely set flag.",
+            "reference": "lib/command.js:1829-1854"
+          },
+          {
+            "risk": "_storeOptionsAsProperties (legacy) is no longer tamper-evident; setting program.foo = 42 corrupts the parsed value and lies via getOptionValueSource.",
+            "consequence": "Buggy middleware can defeat conflict detection and env-priority logic.",
+            "reference": "lib/command.js:1875-1886"
+          },
+          {
+            "risk": "childProcess.spawn for executable subcommands uses stdio:'inherit' but never shell:true; executable name is user-controlled.",
+            "consequence": "Path traversal only via the configured _executableDir; no shell injection vector, but executable search directory should still be validated by the consumer.",
+            "reference": "lib/command.js:1286"
+          }
+        ],
+        "conventions": [
+          "All mutators on Command return this for chaining.",
+          "Errors are CommanderError subclasses with exitCode/code/nestedError; user-facing errors include bulleted remediation hints.",
+          "Output behavior is injected via configureOutput({writeOut, writeErr, outputError, ...}); no globals.",
+          "Subcommands inherit settings via copyInheritedSettings; factory methods (createCommand, createOption, createArgument, createHelp) are extension points."
+        ],
+        "stability": "high",
+        "recurrence": "high",
+        "test_command": "npm test",
+        "last_updated": "2026-01-01T00:00:00.000Z"
+      },
+      {
+        "domain": "help-generation",
+        "rationale": "Help class (lib/help.js ~734 lines) owns rendering: formatHelp, visibleCommands/visibleOptions, sortSubcommands/sortOptions, padWidth, displayWidth (strips ANSI), minWidthToWrap, longestArgumentTermLength, longestCommandTermLength, longestOptionTermLength, showGlobalOptions, style hints, suggestion strings. ~22 dedicated test files. Cohesive, recurring, with its own extension surface (createHelp / configureHelp).",
+        "primary_paths": [
+          "lib/help.js"
+        ],
+        "entry_points": [
+          "lib/help.js"
+        ],
+        "test_paths": [
+          "tests/help.argumentDescription.test.js",
+          "tests/help.boxWrap.test.js",
+          "tests/help.commandTerm.test.js",
+          "tests/help.commandUsage.test.js",
+          "tests/help.longestArgumentTermLength.test.js",
+          "tests/help.longestCommandTermLength.test.js",
+          "tests/help.longestOptionTermLength.test.js",
+          "tests/help.minWidthToWrap.test.js",
+          "tests/help.optionDescription.test.js",
+          "tests/help.optionTerm.test.js",
+          "tests/help.padWidth.test.js",
+          "tests/help.preformatted.test.js",
+          "tests/help.showGlobalOptions.test.js",
+          "tests/help.sortCommands.test.js",
+          "tests/help.sortOptions.test.js",
+          "tests/help.style.test.js",
+          "tests/help.subcommandDescription.test.js",
+          "tests/help.suggestion.test.js",
+          "tests/help.visibleArguments.test.js",
+          "tests/help.visibleCommands.test.js",
+          "tests/help.visibleGlobalOptions.test.js",
+          "tests/help.visibleOptions.test.js",
+          "tests/helpGroup.test.js"
+        ],
+        "key_files": [
+          {
+            "path": "lib/help.js",
+            "purpose": "Help class — formatHelp, visibleCommands/visibleOptions, sort, padding/wrap, displayWidth (strips VT), showGlobalOptions, helpGroup support",
+            "line_range": [
+              1,
+              734
+            ]
+          }
+        ],
+        "key_types": [
+          {
+            "name": "Help",
+            "path": "typings/index.d.ts",
+            "purpose": "Public Help type — overridable helpWidth, sortSubcommands, sortOptions, showGlobalOptions, prepareContext, formatHelp"
+          }
+        ],
+        "patterns": [
+          {
+            "name": "strip-color-before-measurement",
+            "description": "displayWidth uses stripVTControlCharacters so ANSI escape codes do not inflate width calculations.",
+            "example_ref": "lib/help.js:347"
+          },
+          {
+            "name": "sort-subcommands-and-options",
+            "description": "Optional alphabetical sort via compareOptions (short then long, localeCompare); toggled by configureHelp sortSubcommands/sortOptions.",
+            "example_ref": "lib/help.js:48-65"
+          },
+          {
+            "name": "suggest-similar",
+            "description": "Unknown option/command errors append (Did you mean one of X, Y, Z?) computed by lib/suggestSimilar.js using optimal-string-alignment distance, only for candidates with similarity > 0.4.",
+            "example_ref": "lib/suggestSimilar.js"
+          }
+        ],
+        "pitfalls": [
+          {
+            "risk": "displayWidth is computed without emoji/CJK width handling.",
+            "consequence": "Help output misaligns when subcommand descriptions or option descriptions contain wide characters.",
+            "reference": "lib/help.js:347"
+          },
+          {
+            "risk": "helpGroup headings affect visible section ordering but not sortSubcommands ordering across groups.",
+            "consequence": "Grouped help mixes sorted and unsorted sections unless each group is independently sorted; users may report inconsistent ordering.",
+            "reference": "lib/help.js"
+          }
+        ],
+        "conventions": [
+          "Help is a class with static-style methods; extension is via subclassing or configureHelp (no constructor injection).",
+          "Visible commands/options exclude _hidden items and may include placeholder for implicit help command.",
+          "Output streams flow through _outputConfiguration.writeOut and writeErr injected from the Command."
+        ],
+        "stability": "high",
+        "recurrence": "high",
+        "test_command": "npm test",
+        "last_updated": "2026-01-01T00:00:00.000Z"
+      }
+    ]
+  }
+}

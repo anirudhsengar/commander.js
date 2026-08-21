@@ -1,0 +1,112 @@
+{
+  "schema_version": "1",
+  "memory_id": "procedure-validate-repository-change-630caf79fbfc94ed",
+  "revision": 1,
+  "kind": "procedure",
+  "owning_agent_id": "orchestrator",
+  "statement": "Run the repository's authoritative validation contract before review.",
+  "source_type": "validated_bootstrap",
+  "supporting_commit": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+  "evidence": [
+    {
+      "evidence_id": "evidence-99b0110f3c5c30c56862d52f",
+      "source_type": "validated_bootstrap",
+      "repository_path": "typings/index.d.ts",
+      "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+      "sha256": "a6005262ef9ae5d7325a381df594d6b35babfb6df4a89c4febd06e6101d05bc1",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: typings/index.d.ts",
+      "observed_at": "2026-05-29T09:03:21.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-c975e5418a673b16b7582599",
+      "source_type": "validated_bootstrap",
+      "repository_path": "index.js",
+      "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+      "sha256": "3b1110c896b70704627d415e6658953a5a6f099e0b141311c73dfb06e55bdbcc",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: index.js",
+      "observed_at": "2026-05-29T09:03:21.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-ed1a6495c835d623435b2886",
+      "source_type": "validated_bootstrap",
+      "repository_path": "lib/command.js",
+      "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+      "sha256": "751c19479dac3e3f415fbbd709df90d25c595034f699dba7bef6eeab4dc1304b",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: lib/command.js",
+      "observed_at": "2026-05-29T09:03:21.000Z",
+      "actor": "agentify-specialist-discovery"
+    }
+  ],
+  "confidence": "medium",
+  "freshness": "current",
+  "dependent_paths": [
+    "index.js",
+    "lib/command.js",
+    "typings/index.d.ts"
+  ],
+  "invalidation_conditions": [
+    "Revalidate when a required context path or authoritative validation command changes."
+  ],
+  "superseded_by": null,
+  "contradicts": [],
+  "human_attribution": null,
+  "tags": [
+    "procedure",
+    "procedure-validate-repository-change"
+  ],
+  "accepted_candidate_ids": [
+    "candidate-d6220a07d1ab9aa507c920a90af1b206"
+  ],
+  "created_at": "2026-08-21T14:05:31.067Z",
+  "updated_at": "2026-08-21T14:05:31.067Z",
+  "semantic_digest": "b7a709e2c788eeb5ab77371ee35c9fe3336ccced0428577e279e50a2efaf0f6c",
+  "payload": {
+    "name": "validate-repository-change",
+    "trigger_conditions": [
+      "before review",
+      "release check",
+      "test implementation",
+      "validate change"
+    ],
+    "required_context_paths": [
+      "index.js",
+      "lib/command.js",
+      "typings/index.d.ts"
+    ],
+    "allowed_commands": [
+      "(none — pure JS ESM library, no build step)",
+      "npm run check:format",
+      "npm run check:lint",
+      "npm run check:type",
+      "npm test"
+    ],
+    "expected_file_patterns": [],
+    "side_effects": [
+      "May create repository-local test, build, or coverage artifacts."
+    ],
+    "validation_commands": [
+      "(none — pure JS ESM library, no build step)",
+      "npm run check:format",
+      "npm run check:lint",
+      "npm run check:type",
+      "npm test"
+    ],
+    "recovery_steps": [
+      "Stop after the first deterministic failure and preserve its output.",
+      "Repair the root cause without weakening validation or repository policy.",
+      "Rerun the focused command, then the complete required validation set."
+    ]
+  },
+  "content_digest": "0d7b48aa3eb59ad85ad40ff28fd5c638d4f40eda0d191f32915cc0087d3f8e93"
+}

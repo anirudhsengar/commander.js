@@ -1,0 +1,43 @@
+{
+  "format": "agentify_task_policy_configuration",
+  "schema_version": "2",
+  "configured": false,
+  "repository": {
+    "repository_id": "1341850477",
+    "full_name": "anirudhsengar/commander.js",
+    "default_branch": "master",
+    "current_commit": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+    "current_branch": "master",
+    "origin_url": "https://github.com/anirudhsengar/commander.js.git",
+    "actor_login": "anirudhsengar",
+    "actor_permission": "admin",
+    "default_branch_policy": "unprotected"
+  },
+  "model_network_posture": "denied-by-default",
+  "dependency_change_policy": "maintainer-approval-required",
+  "application_merge": "disabled",
+  "application_deployment": "disabled",
+  "protected_path_policy_known": false,
+  "validation_services_attested": false,
+  "validation_execution": {
+    "mode": "maintainer-approved-unsandboxed",
+    "child_environment_credentials": "removed",
+    "repository_mutation": "detected-and-rejected",
+    "network_isolation": "not-provided",
+    "os_sandbox": "not-provided"
+  },
+  "validation_approval": {
+    "mode": "maintainer-approved-unsandboxed",
+    "approved_by": "anirudhsengar",
+    "approved_at": "2026-08-21T13:43:07.172Z",
+    "package_json_sha256": "6ea3e19871a9a05fa0c8b89595b6df05d23d266936b9785607128fd420864337",
+    "manifest_path": "package.json",
+    "lockfile": {
+      "path": "package-lock.json",
+      "sha256": "b92530c30cb2ab5770f24e632e60a8b031e2c90cc268b5c1ffe524907c84c233"
+    },
+    "commands_sha256": "91d8202b4cad0c470fb92ec59522855fca084874a0620f73057fd838e223976a"
+  },
+  "policy": null,
+  "instructions": "Agentify remains fail-closed until every installer readiness blocker is resolved, installer attestation for unsandboxed repository validation is recorded, and validation passes."
+}
