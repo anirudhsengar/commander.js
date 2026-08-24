@@ -1,0 +1,799 @@
+{
+  "meta": {
+    "project_type": "library",
+    "languages": [
+      "JavaScript (ESM)",
+      "TypeScript declarations"
+    ],
+    "frameworks": [
+      "node:test"
+    ],
+    "domain_hypothesis": "JavaScript CLI framework library (argument/option parser)",
+    "lifecycle": {
+      "sdlc_model": "Library release cadence: PRs against develop; maintainer-driven semver releases; no automated CI gating besides the npm test + npm run check gate",
+      "issue_types": [
+        "none_documented"
+      ],
+      "review_loop": {
+        "present": false,
+        "kind": "none"
+      },
+      "documentation_loop": {
+        "present": false,
+        "kind": "none"
+      },
+      "conditional_docs": {
+        "present": true,
+        "path": "docs/",
+        "last_updated": null,
+        "entries_count": 6
+      },
+      "aiw_scripts": [],
+      "agent_definitions": {
+        "count": 0,
+        "paths": []
+      }
+    },
+    "documentation": {
+      "agents_md": null,
+      "agents_md_line_count": null,
+      "has_ai_docs": false,
+      "has_app_docs": true,
+      "has_specs": false,
+      "conditional_docs_path": "docs/",
+      "readme_metrics": {
+        "present": true,
+        "line_count": 1173,
+        "section_count": 10
+      },
+      "ai_docs_freshness": {
+        "last_updated": null,
+        "file_count": 0
+      },
+      "specs_archive": {
+        "present": false,
+        "file_count": 0,
+        "date_range": null
+      },
+      "postmortems_dir": null,
+      "changelog_present": true
+    }
+  },
+  "skeleton": {
+    "top_level_tree": [
+      ".editorconfig",
+      ".github/",
+      ".gitignore",
+      ".gitattributes",
+      ".prettierignore",
+      ".prettierrc.js",
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "LICENSE",
+      "Readme.md",
+      "Readme_zh-CN.md",
+      "SECURITY.md",
+      "docs/",
+      "eslint.config.js",
+      "examples/",
+      "index.js",
+      "lib/",
+      "package-lock.json",
+      "package-support.json",
+      "package.json",
+      "tests/",
+      "tsconfig.js.json",
+      "tsconfig.json",
+      "tsconfig.ts.json",
+      "typings/"
+    ],
+    "entry_points": [
+      {
+        "path": "index.js",
+        "role": "Library public ESM entry",
+        "language": "JavaScript (ESM)",
+        "run_command": "node -e \"import('./index.js').then(m => console.log(Object.keys(m)))\""
+      },
+      {
+        "path": "typings/index.d.ts",
+        "role": "TypeScript declarations",
+        "language": "TypeScript declarations",
+        "run_command": "tsc -p tsconfig.ts.json"
+      }
+    ],
+    "code_test_mirror": {
+      "observed": true,
+      "pattern": "tests mirror lib classes"
+    },
+    "first_5_files_for_fresh_agent": [
+      {
+        "path": "Readme.md",
+        "why": "user-facing overview"
+      },
+      {
+        "path": "index.js",
+        "why": "public API surface"
+      },
+      {
+        "path": "lib/command.js",
+        "why": "Command class"
+      },
+      {
+        "path": "lib/option.js",
+        "why": "Option class"
+      },
+      {
+        "path": "tests/testHelpers.js",
+        "why": "test utilities"
+      }
+    ],
+    "app_vs_agentic_layer": {
+      "app_layer": "library",
+      "agentic_layer": null,
+      "bleed_risk_paths": []
+    }
+  },
+  "module_graph": {
+    "edges": [
+      {
+        "from": "index.js",
+        "to": "lib/command.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "index.js",
+        "to": "lib/argument.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "index.js",
+        "to": "lib/error.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "index.js",
+        "to": "lib/help.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "index.js",
+        "to": "lib/option.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/argument.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/error.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/help.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/option.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/suggestSimilar.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/help.js",
+        "to": "lib/argument.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/argument.js",
+        "to": "lib/error.js",
+        "kind": "es-module-import"
+      },
+      {
+        "from": "lib/option.js",
+        "to": "lib/error.js",
+        "kind": "es-module-import"
+      }
+    ],
+    "parallelizable_subtrees": [
+      [
+        "lib/suggestSimilar.js"
+      ],
+      [
+        "lib/error.js"
+      ],
+      [
+        "lib/argument.js"
+      ],
+      [
+        "lib/option.js"
+      ],
+      [
+        "lib/help.js"
+      ]
+    ],
+    "shared_state": [],
+    "client_server_split": null,
+    "shared_abstractions": [
+      "lib/error.js",
+      "lib/argument.js",
+      "lib/help.js",
+      "lib/option.js",
+      "lib/command.js",
+      "lib/suggestSimilar.js"
+    ]
+  },
+  "type_contract_surface": {
+    "pydantic_models": [],
+    "typescript_interfaces": [
+      {
+        "kind": "typescript_interface",
+        "path": "typings/index.d.ts",
+        "name": "OptionValues",
+        "fields": [
+          "key",
+          "value"
+        ]
+      }
+    ],
+    "db_models": [],
+    "idks": [],
+    "stable_types": [],
+    "volatile_types": [],
+    "one_type_trace": null
+  },
+  "conventions": {
+    "naming": {
+      "files": "lowercase singular names",
+      "classes": "PascalCase",
+      "functions": "camelCase",
+      "branches": "unknown",
+      "commits": "unknown"
+    },
+    "error_handling": {
+      "raise_vs_return": "raise",
+      "custom_exceptions": true,
+      "log_then_throw": false
+    },
+    "logging": {
+      "pattern": "no application logging",
+      "observed": true
+    },
+    "state_passing": "constructor_injection",
+    "file_size": {
+      "observed_avg": 460,
+      "observed_max": 2768
+    },
+    "patterns": []
+  },
+  "pitfalls": [
+    {
+      "module": "lib/command.js",
+      "what": "storeOptionsAsProperties() must be called before any option is added",
+      "consequence": "Hard Error",
+      "source_reference": "lib/command.js:898",
+      "line_ref": 898
+    },
+    {
+      "module": "lib/command.js",
+      "what": "storeOptionsAsProperties() forbids setting option values before flag is enabled",
+      "consequence": "Hard Error",
+      "source_reference": "lib/command.js:901",
+      "line_ref": 901
+    },
+    {
+      "module": "lib/command.js",
+      "what": "parse() cannot be called twice when storeOptionsAsProperties is true",
+      "consequence": "Hard Error",
+      "source_reference": "lib/command.js:1173",
+      "line_ref": 1173
+    },
+    {
+      "module": "lib/command.js",
+      "what": "Default error path calls process.exit(code) directly",
+      "consequence": "Exits host process",
+      "source_reference": "lib/command.js:1320",
+      "line_ref": 1320
+    },
+    {
+      "module": "CHANGELOG.md",
+      "what": "Commander 15 is ESM only",
+      "consequence": "CJS consumers may break",
+      "source_reference": "CHANGELOG.md:15",
+      "line_ref": 15
+    },
+    {
+      "module": "CONTRIBUTING.md",
+      "what": "Zero-production-dependency policy",
+      "consequence": "Reject PRs with new deps",
+      "source_reference": "CONTRIBUTING.md:43",
+      "line_ref": 43
+    }
+  ],
+  "validation_surface": {
+    "test_command": "npm test",
+    "test_runtime_seconds_estimate": 60,
+    "lint_command": "npm run check:lint",
+    "typecheck_command": "npm run check:type",
+    "e2e_command": null,
+    "spec_compliance_evidence": [],
+    "severity_taxonomy": [],
+    "per_change_type": {
+      "chore": {
+        "mandatory": [
+          "npm test",
+          "npm run check"
+        ],
+        "optional": []
+      },
+      "bug": {
+        "mandatory": [
+          "npm test",
+          "npm run check"
+        ],
+        "optional": []
+      },
+      "feature": {
+        "mandatory": [
+          "npm test",
+          "npm run check"
+        ],
+        "optional": []
+      }
+    }
+  },
+  "operational_surface": {
+    "build": {
+      "command": "npm ci",
+      "recipe_file": "package.json"
+    },
+    "run": {
+      "command": "node examples/pizza",
+      "env_vars_required": [],
+      "ports": [],
+      "services": [],
+      "dependencies": []
+    },
+    "deploy": null,
+    "env_vars": [],
+    "ci_cd": {
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch"
+      ],
+      "gates": [
+        "npm ci",
+        "npm test",
+        "npm run check"
+      ],
+      "artifacts": []
+    },
+    "git_workflow": {
+      "main_branch": "develop",
+      "branch_naming": "feature branches off develop; releases cut from master",
+      "worktree_pattern": "unknown",
+      "cleanup": "unknown",
+      "contribution_branches": []
+    },
+    "port_ranges": {
+      "dev": "unknown"
+    },
+    "shutdown_procedure": {
+      "script": null,
+      "commands": []
+    },
+    "spawned_subprocesses": []
+  },
+  "security_surface": {
+    "paths": {
+      "zero_access": [
+        ".git",
+        "node_modules",
+        "package-lock.json",
+        "coverage"
+      ],
+      "read_only": [
+        "lib/",
+        "typings/",
+        "index.js",
+        "package.json"
+      ],
+      "no_delete": [
+        "lib/",
+        "typings/",
+        "index.js",
+        "tests/"
+      ],
+      "fully_writable": []
+    },
+    "bash_safe_patterns": [],
+    "bash_blocked_patterns": [
+      "rm -rf /",
+      "rm -rf ~",
+      "git push --force origin master",
+      "git push --force origin develop",
+      "npm publish",
+      "curl | bash"
+    ],
+    "banned_interpreters": [],
+    "env_allowlist": [
+      "NO_COLOR",
+      "FORCE_COLOR",
+      "CLICOLOR_FORCE",
+      "CLICOLOR"
+    ],
+    "production_credentials": [],
+    "damage_control_rules": [
+      "Do not add new production dependencies",
+      "Do not modify package.json files, main, exports, or type fields",
+      "Do not commit to master directly",
+      "Do not publish to npm"
+    ],
+    "security_checklist": {
+      "tools": [],
+      "commands": [
+        "npm audit --omit=dev"
+      ],
+      "paths": [
+        ".git",
+        "node_modules",
+        "package-lock.json"
+      ],
+      "env": [
+        "NO_COLOR",
+        "FORCE_COLOR",
+        "CLICOLOR_FORCE"
+      ],
+      "blocks": [
+        "rm -rf /",
+        "npm publish"
+      ],
+      "logs": []
+    }
+  },
+  "coverage": {
+    "D1_topography": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Topography anchored.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"description\": \"the complete solution for node.js command-line programs\"",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D2_module_boundaries": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Module graph traced.",
+      "evidence": [
+        {
+          "path": "index.js",
+          "excerpt": "import { Command } from './lib/command.js';",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D3_type_contract": {
+      "status": "covered",
+      "confidence": "medium",
+      "evidence_summary": "Typings/index.d.ts declares OptionValues (Record<string, any>) used by Command.opts()/optsWithGlobals().",
+      "evidence": [
+        {
+          "path": "typings/index.d.ts",
+          "excerpt": "export type OptionValues = Record<string, any>;",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D4_conventions": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "File and class naming conventions observed.",
+      "evidence": [
+        {
+          "path": "lib/command.js",
+          "excerpt": "export class Command extends EventEmitter {",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D5_pitfalls": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Six substantive hazards.",
+      "evidence": [
+        {
+          "path": "lib/command.js",
+          "excerpt": "throw new Error('call .storeOptionsAsProperties() before adding options');",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D6_validation": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Validation commands declared.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"test\": \"node --test && npm run check:type:ts\"",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D7_operational": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "No build step.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"type\": \"module\"",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D8_security": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Zero-access paths.",
+      "evidence": [
+        {
+          "path": ".gitignore",
+          "excerpt": "node_modules",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D9_process": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Library release cadence.",
+      "evidence": [
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "Please submit pull requests against the develop branch.",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D10_documentation": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "10 documented top-level sections.",
+      "evidence": [
+        {
+          "path": "Readme.md",
+          "excerpt": "## Installation",
+          "kind": "positive"
+        }
+      ]
+    }
+  },
+  "open_questions": [],
+  "exploration_log": [
+    {
+      "ts": "2026-08-24T04:02:36.989Z",
+      "action": "draft_bootstrap",
+      "target": ".",
+      "observation": "Created an honest gap-marked map to receive incremental audit evidence."
+    },
+    {
+      "ts": "2026-08-24T04:02:44.178Z",
+      "action": "gap_filler_delta",
+      "target": "D3_type_contract",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-24T04:02:44.179Z",
+      "action": "gap_filler_delta",
+      "target": "D3_type_contract",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-24T04:02:54.413Z",
+      "action": "gap_filler_delta",
+      "target": "(no-dim)",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    }
+  ],
+  "schema_version": "1",
+  "generated_at": "2026-08-24T04:02:36.989Z",
+  "expert_evidence": {
+    "expert_domains": [
+      {
+        "domain": "cli_option_argument_parsing",
+        "rationale": "Recurring core domain of Commander.js: Command class owns option/argument/subcommand registration and parsing; Option class owns flag parsing, value coercion, conflicts, implies, presets, env bindings, choices, mandatory, custom argParser; Argument class owns positional argument names, variadics, default values, choices, custom argParser; suggestSimilar.js is a pure Damerau-Levenshtein helper for typo suggestions; the entire ESM API surface in index.js plus most of the docs/ and tests/ revolve around this single cohesive domain.",
+        "primary_paths": [
+          "lib/command.js",
+          "lib/option.js",
+          "lib/argument.js",
+          "lib/suggestSimilar.js",
+          "index.js"
+        ],
+        "entry_points": [
+          "index.js",
+          "lib/command.js",
+          "lib/option.js"
+        ],
+        "test_paths": [
+          "tests/command.parse.test.js",
+          "tests/command.parseOptions.test.js",
+          "tests/option.bad-flags.test.js",
+          "tests/options.bool.test.js",
+          "tests/options.bool.combo.test.js",
+          "tests/options.bool.small.combined.test.js",
+          "tests/options.camelcase.test.js",
+          "tests/options.choices.test.js",
+          "tests/options.conflicts.test.js",
+          "tests/options.custom-processing.test.js",
+          "tests/options.default.test.js",
+          "tests/options.dual-options.test.js",
+          "tests/options.env.test.js",
+          "tests/options.flags.test.js",
+          "tests/options.getset.test.js",
+          "tests/options.implies.test.js",
+          "tests/options.mandatory.test.js",
+          "tests/options.optional.test.js",
+          "tests/options.opts.test.js",
+          "tests/options.optsWithGlobals.test.js",
+          "tests/options.preset.test.js",
+          "tests/options.registerClash.test.js",
+          "tests/options.required.test.js",
+          "tests/options.twice.test.js",
+          "tests/options.values.test.js",
+          "tests/options.variadic.test.js",
+          "tests/options.version.test.js",
+          "tests/argument.chain.test.js",
+          "tests/argument.choices.test.js",
+          "tests/argument.custom-processing.test.js",
+          "tests/argument.required.test.js",
+          "tests/argument.variadic.test.js",
+          "tests/command.argumentVariations.test.js",
+          "tests/command.positionalOptions.test.js"
+        ],
+        "key_files": [
+          {
+            "path": "lib/command.js",
+            "purpose": "Core Command class: parse(), option(), argument(), command(), hook(), exitOverride(), lifecycle hooks; ~2768 lines.",
+            "line_range": [
+              1,
+              2768
+            ]
+          },
+          {
+            "path": "lib/option.js",
+            "purpose": "Option and DualOptions classes: flag parsing, value coercion, defaults, conflicts, implies, presets, env vars, choices, custom argParser.",
+            "line_range": [
+              1,
+              378
+            ]
+          },
+          {
+            "path": "lib/argument.js",
+            "purpose": "Argument class for positional arguments: variadic, default values, choices, custom argParser, plus humanReadableArgName helper used by Help.",
+            "line_range": [
+              1,
+              148
+            ]
+          },
+          {
+            "path": "lib/suggestSimilar.js",
+            "purpose": "Pure Damerau-Levenshtein suggestion algorithm used by Command for did-you-mean on unknown options/commands.",
+            "line_range": [
+              1,
+              70
+            ]
+          },
+          {
+            "path": "index.js",
+            "purpose": "Public ESM entry that exports Command, Option, Argument, Help, errors and factory helpers.",
+            "line_range": [
+              1,
+              30
+            ]
+          },
+          {
+            "path": "typings/index.d.ts",
+            "purpose": "TypeScript declarations including OptionValues, CommandOptions, ParseOptions, OptionValueSource, HookEvent.",
+            "line_range": [
+              1,
+              1115
+            ]
+          }
+        ],
+        "key_types": [
+          {
+            "name": "Command",
+            "path": "typings/index.d.ts:374",
+            "purpose": "Public Command class declaration covering parse, option, argument, command, hook, exitOverride, lifecycle."
+          },
+          {
+            "name": "Option",
+            "path": "typings/index.d.ts:80",
+            "purpose": "Public Option class declaration covering flags, default, preset, conflicts, implies, env, argParser, makeOptionMandatory, hideHelp, choices."
+          },
+          {
+            "name": "Argument",
+            "path": "typings/index.d.ts:46",
+            "purpose": "Public Argument class declaration covering name, default, argParser, choices, argRequired, argOptional."
+          },
+          {
+            "name": "OptionValues",
+            "path": "typings/index.d.ts:374",
+            "purpose": "Record<string, any> returned by Command.opts() and Command.optsWithGlobals(); canonical bag of parsed CLI option values."
+          },
+          {
+            "name": "CommandOptions",
+            "path": "typings/index.d.ts:1094",
+            "purpose": "Optional configuration passed to Command.command() for subcommand registration (hidden, isDefault, deprecated noHelp)."
+          }
+        ],
+        "patterns": [
+          {
+            "name": "method_chaining",
+            "description": "Every mutating Command method returns `this` so callers can chain .option().argument().action() etc. (e.g. lib/command.js:21-100).",
+            "example_ref": "lib/command.js:21"
+          },
+          {
+            "name": "custom_arg_parser",
+            "description": "Both Option and Argument expose a custom argParser that converts the raw string into a typed value; InvalidArgumentError thrown from the parser is wrapped into a CommanderError by Command.parse.",
+            "example_ref": "lib/option.js:185"
+          },
+          {
+            "name": "dual_options",
+            "description": "DualOptions class implements `--name [value]` form where the option can be either boolean or string depending on whether a value follows.",
+            "example_ref": "lib/option.js:268"
+          },
+          {
+            "name": "suggest_similar",
+            "description": "Command calls suggestSimilar() (maxDistance=3 Damerau-Levenshtein) when an unknown option/command is encountered and _showSuggestionAfterError is true.",
+            "example_ref": "lib/suggestSimilar.js:56"
+          }
+        ],
+        "pitfalls": [
+          {
+            "risk": "Legacy storeOptionsAsProperties ordering errors",
+            "consequence": "Program crashes when toggling the legacy property store after registering options or setting values.",
+            "reference": "lib/command.js:898"
+          },
+          {
+            "risk": "Default process.exit on parse errors",
+            "consequence": "Host process exits unless consumer wires Command.exitOverride(); integration tests must call exitOverride.",
+            "reference": "lib/command.js:1320"
+          },
+          {
+            "risk": "parse() cannot be re-invoked under storeOptionsAsProperties",
+            "consequence": "Reusing a Command across parses throws; consumers must construct a fresh Command per parse.",
+            "reference": "lib/command.js:1173"
+          },
+          {
+            "risk": "ESM-only in v15",
+            "consequence": "CJS consumers relying on require('commander') need explicit ESM-from-CJS support from their runtime or bundler.",
+            "reference": "CHANGELOG.md:15"
+          }
+        ],
+        "conventions": [
+          "Options/arguments are PascalCase classes with camelCase methods on Command",
+          "Tests use node:test under tests/<class>.<topic>.test.js naming",
+          "@deprecated since vN annotations in typings/index.d.ts mark retired APIs (e.g. addHelpCommand)",
+          "Zero production dependencies policy per CONTRIBUTING.md:43 means all parsing logic lives in lib/"
+        ],
+        "stability": "high",
+        "recurrence": "high",
+        "test_command": "node --test tests/command.parse.test.js tests/options.bool.test.js tests/options.values.test.js tests/argument.required.test.js",
+        "last_updated": "2026-08-24T04:00:00.000Z"
+      }
+    ]
+  }
+}

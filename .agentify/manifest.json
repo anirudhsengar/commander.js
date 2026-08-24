@@ -1,0 +1,213 @@
+{
+  "format": "agentify_team_memory",
+  "schema_version": "1",
+  "revision": 11,
+  "root": ".agentify",
+  "repository_id": "anirudhsengar/commander.js",
+  "created_at": "2026-08-24T03:56:02.052Z",
+  "updated_at": "2026-08-24T04:02:58.826Z",
+  "entries": [
+    {
+      "path": ".agentify/.gitignore",
+      "kind": "ignore_rules",
+      "sha256": "2b36b4d4e3c6eceefe15702c59b6176359f9321c6bd093dfdbcb87d900400a6c",
+      "bytes": 95
+    },
+    {
+      "path": ".agentify/agents/orchestrator.json",
+      "kind": "agent_identity",
+      "sha256": "45aee81bdfa626ec07dbb37cfa8fe7a82e0a7b9aee64a3680a679d8dc6ce9e77",
+      "bytes": 1276
+    },
+    {
+      "path": ".agentify/agents/roles/builder.json",
+      "kind": "agent_identity",
+      "sha256": "2436e87616ee7314c85bac39604e370fac83a81b91fd1972e8247160ec102948",
+      "bytes": 1248
+    },
+    {
+      "path": ".agentify/agents/roles/knowledge-maintainer.json",
+      "kind": "agent_identity",
+      "sha256": "35fc84fbb0e677e8345f59ebb19a88e64d3a4a8a600ed5b8b6c8679a6e4a35ee",
+      "bytes": 1295
+    },
+    {
+      "path": ".agentify/agents/roles/reviewer.json",
+      "kind": "agent_identity",
+      "sha256": "5af103909157288e5f329a78cc03115e4306bcabdce9b7f36a03cdc2ed966469",
+      "bytes": 1253
+    },
+    {
+      "path": ".agentify/agents/specialists/specialist-cli-option-argument-parsing.json",
+      "kind": "agent_identity",
+      "sha256": "04229337e46c817e0bb8dbd24645323cb253a28d9e4c8cf5954f52e8160a8567",
+      "bytes": 22171
+    },
+    {
+      "path": ".agentify/agents/specialists/specialist-lib-core.json",
+      "kind": "agent_identity",
+      "sha256": "7745c7fc7d55f8112bb819e7eb96477db9bb774ee68f0d1e3c07913e8e2ffe50",
+      "bytes": 2563
+    },
+    {
+      "path": ".agentify/history/agents/builder/000000000001.json",
+      "kind": "history_event",
+      "sha256": "1b84182b6cb48c6d226775bed5c8545254700f9e59f06d1981d0cacc012e7a68",
+      "bytes": 1831
+    },
+    {
+      "path": ".agentify/history/agents/knowledge-maintainer/000000000001.json",
+      "kind": "history_event",
+      "sha256": "b6481d27a2cb35a577e610858377033afe6774de81890b1cdf41f961ad5411bd",
+      "bytes": 1906
+    },
+    {
+      "path": ".agentify/history/agents/orchestrator/000000000001.json",
+      "kind": "history_event",
+      "sha256": "8f2e019176b2913def16f9f6e84057878fb601abd7b2a0183c9305a8e97d8951",
+      "bytes": 1871
+    },
+    {
+      "path": ".agentify/history/agents/reviewer/000000000001.json",
+      "kind": "history_event",
+      "sha256": "0cb17a34f71176dc87d1543acc847f334406184a08b494208320eed253425e69",
+      "bytes": 1838
+    },
+    {
+      "path": ".agentify/history/agents/specialist-cli-option-argument-parsing/000000000001.json",
+      "kind": "history_event",
+      "sha256": "41b746cece845d8b955a05e9224713020ff50f728daec1db15990bd61165cb94",
+      "bytes": 23652
+    },
+    {
+      "path": ".agentify/history/agents/specialist-lib-core/000000000001.json",
+      "kind": "history_event",
+      "sha256": "07bf8fb225ead7ace6441747df5a1012481695d1e095a61d81cde143f824fd65",
+      "bytes": 3213
+    },
+    {
+      "path": ".agentify/history/candidates/candidate-0d50dcd3794cce8143366d58f3c600e3.json",
+      "kind": "candidate_decision",
+      "sha256": "6d329499cbe35ca726b3946cbd1c1eeee85b92614c2239be82f01a311ba6dce8",
+      "bytes": 8227
+    },
+    {
+      "path": ".agentify/history/candidates/candidate-35f9b88151512df6f3d2d9a2f22674e5.json",
+      "kind": "candidate_decision",
+      "sha256": "20b339342c8160ce9afee52f76e242f2d512dcdf47751cc98f36f35d55a7f3a3",
+      "bytes": 31033
+    },
+    {
+      "path": ".agentify/history/candidates/candidate-69c0d91c4c986c2fd74904bebd00d35d.json",
+      "kind": "candidate_decision",
+      "sha256": "af915035399361118df053d2c92506996f378f435b234ad7db10853356740bef",
+      "bytes": 4609
+    },
+    {
+      "path": ".agentify/history/candidates/candidate-80708c5e13c08b35bc2a716bab63fe7f.json",
+      "kind": "candidate_decision",
+      "sha256": "d649131e1f77cb392ee3d21e9f95b92d35022b1f083ccb5fc096d1873fc7463f",
+      "bytes": 28246
+    },
+    {
+      "path": ".agentify/history/candidates/candidate-a4a5ca091d44d6e0b140dac4e5f10f4f.json",
+      "kind": "candidate_decision",
+      "sha256": "b99c69eb24b9c2cb7141a22820e096f81b6a18ee473a149f3fa02be1ab631fb5",
+      "bytes": 4277
+    },
+    {
+      "path": ".agentify/history/candidates/installer-self-update-policy-v1.json",
+      "kind": "candidate_decision",
+      "sha256": "94f1cd2352689fa10ad3adc440642ecb31fe0bd8c2984c9162a4ef979aa0d32b",
+      "bytes": 3220
+    },
+    {
+      "path": ".agentify/history/memory/procedure-validate-cli-option-argument-parsing-153c366c07b0dfb9/000000000001.json",
+      "kind": "history_event",
+      "sha256": "89a287322f692ea38e3fbd4211e8802310b65d5fbc88db3f5d1565b825e2319b",
+      "bytes": 28342
+    },
+    {
+      "path": ".agentify/history/memory/procedure-validate-lib-core-1771181f29f7c379/000000000001.json",
+      "kind": "history_event",
+      "sha256": "537b2633e22c0e32283b3c91f387853e0d3fe78a3cc5853beb571ce6f9f59e3c",
+      "bytes": 4724
+    },
+    {
+      "path": ".agentify/history/memory/procedure-validate-repository-change-038b45ed0ec649b2/000000000001.json",
+      "kind": "history_event",
+      "sha256": "8531d0a1db4c6d9b92fc44a2683f7992cdb49c7f1ceaf9b94563fd1255884d7f",
+      "bytes": 8333
+    },
+    {
+      "path": ".agentify/history/memory/self-update-allowlist/000000000001.json",
+      "kind": "history_event",
+      "sha256": "cfbe700936d377ea10dcfb8ddba1908e202d376d10df7f1251fa7cc00f66728d",
+      "bytes": 3361
+    },
+    {
+      "path": ".agentify/history/memory/specialist-profile-specialist-cli-option-argument-parsing-8a23a0ca81c11624/000000000001.json",
+      "kind": "history_event",
+      "sha256": "5e96d219affddeaf1c5d17676b12a31753354e500c5b6a4ce74af6e31b25dd0f",
+      "bytes": 31118
+    },
+    {
+      "path": ".agentify/history/memory/specialist-profile-specialist-lib-core-63b0f18867692c03/000000000001.json",
+      "kind": "history_event",
+      "sha256": "821523e68510ea560a60d27fb189cd9777edbb582496b516ce3d0f86a1b11d92",
+      "bytes": 4381
+    },
+    {
+      "path": ".agentify/knowledge/procedures/procedure-validate-cli-option-argument-parsing-153c366c07b0dfb9.json",
+      "kind": "memory_record",
+      "sha256": "c893e231e0239345305d31346a9e33fa381cc65e6f797ce8ae42995cb9cb57f9",
+      "bytes": 26561
+    },
+    {
+      "path": ".agentify/knowledge/procedures/procedure-validate-lib-core-1771181f29f7c379.json",
+      "kind": "memory_record",
+      "sha256": "64a58454fc3ae6b81035c126332b7777e9a5d568911780552cbce2ba9f88514d",
+      "bytes": 3910
+    },
+    {
+      "path": ".agentify/knowledge/procedures/procedure-validate-repository-change-038b45ed0ec649b2.json",
+      "kind": "memory_record",
+      "sha256": "0fbc5583ecf1757e9ba138da5a3a53235276ecae0c96f629889e55d1f923d8e1",
+      "bytes": 7354
+    },
+    {
+      "path": ".agentify/knowledge/specialists/specialist-profile-specialist-cli-option-argument-parsing-8a23a0ca81c11624.json",
+      "kind": "memory_record",
+      "sha256": "d22a09949be74175eaaeea7954587e3f500c7dfcd38d117e8dbaa92289d19e3f",
+      "bytes": 29277
+    },
+    {
+      "path": ".agentify/knowledge/specialists/specialist-profile-specialist-lib-core-63b0f18867692c03.json",
+      "kind": "memory_record",
+      "sha256": "32406a3fa8da547f744f875d0129035bcb4aa2f9f8258725d896be6defa482db",
+      "bytes": 3573
+    },
+    {
+      "path": ".agentify/policies/self-update-allowlist.json",
+      "kind": "memory_record",
+      "sha256": "4f501ce9f36f47325b549dbf130b77e9988b1d0219c405778eb3eb1dbcb15345",
+      "bytes": 2670
+    }
+  ],
+  "root_digest": "ff8a3b76ba909b2f19a193a081a150a09316d8bbc065080c0a57dbdc190bfcc8",
+  "canonical_map": {
+    "path": ".agentify/runtime/audit/codebase_map.json",
+    "sha256": "dc281396ceefcfcd6a8209036ca08952e5424363ea534f93de588228473b33fe",
+    "bytes": 23539
+  },
+  "activation": {
+    "state": "analysis_only",
+    "disposition": "analyzable-only",
+    "promoted_at": null
+  },
+  "installation_report": {
+    "path": ".agentify/installation-report.json",
+    "sha256": "207d595fa54880961775064f184ca268b5fcde466647c2b53d2f39180e3bb546",
+    "bytes": 3214
+  }
+}

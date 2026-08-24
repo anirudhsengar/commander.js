@@ -1,0 +1,80 @@
+{
+  "schema_version": "1",
+  "event_type": "entity_mutation",
+  "entity_type": "agent_identity",
+  "entity_id": "specialist-lib-core",
+  "revision": 1,
+  "operation": "create",
+  "actor": "knowledge-maintainer",
+  "reason": "create persistent specialist identity",
+  "occurred_at": "2026-08-24T04:02:57.745Z",
+  "before_digest": null,
+  "after_digest": "038f65b52942646d33b4a1ea9b0a6459283359a696b22cc8db09c4a327837b25",
+  "after": {
+    "schema_version": "1",
+    "agent_id": "specialist-lib-core",
+    "revision": 1,
+    "role": "specialist",
+    "display_name": "Lib Core Specialist",
+    "domain": "lib-core",
+    "status": "active",
+    "read_only": true,
+    "write_authority": "none",
+    "github_write_authority": "none",
+    "memory_kinds": [
+      "codebase",
+      "episode",
+      "procedure",
+      "specialist"
+    ],
+    "supporting_commit": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+    "evidence": [
+      {
+        "evidence_id": "evidence-39fdf9eb36ac2b22d95583b4",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/error.js",
+        "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+        "source_commit_time": "2026-05-29T09:03:21.000Z",
+        "sha256": "98ac5e1b63894792fa7740e5fb2b79ef8c016d94fc41e55bb6ff85fff3346e72",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/error.js",
+        "observed_at": "2026-05-29T09:03:21.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-3ab1358b1b18bfb7d717c724",
+        "source_type": "validated_bootstrap",
+        "repository_path": "tests/testHelpers.js",
+        "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+        "source_commit_time": "2026-05-29T09:03:21.000Z",
+        "sha256": "b9c9d5b92691b0ee944528097d4e3da77d1ae1b1dd885d830c0bfa80c3dafbd4",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: tests/testHelpers.js",
+        "observed_at": "2026-05-29T09:03:21.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-924493dd7f273fa10e713902",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/help.js",
+        "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+        "source_commit_time": "2026-05-29T09:03:21.000Z",
+        "sha256": "c1a58d89555b8c0cef5c3da9b173c998ce1faf43fe2cdcb331c0fd2c3a455c38",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/help.js",
+        "observed_at": "2026-05-29T09:03:21.000Z",
+        "actor": "agentify-specialist-discovery"
+      }
+    ],
+    "created_at": "2026-08-24T04:02:57.745Z",
+    "updated_at": "2026-08-24T04:02:57.745Z",
+    "content_digest": "038f65b52942646d33b4a1ea9b0a6459283359a696b22cc8db09c4a327837b25"
+  },
+  "event_digest": "0eb242f7e9d8d75c48fdb8f3a384fcf94f87df616fb3c6354099cc00038867d8"
+}

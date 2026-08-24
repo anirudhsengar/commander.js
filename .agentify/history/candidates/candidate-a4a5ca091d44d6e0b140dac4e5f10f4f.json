@@ -1,0 +1,107 @@
+{
+  "schema_version": "1",
+  "event_type": "candidate_decision",
+  "candidate_id": "candidate-a4a5ca091d44d6e0b140dac4e5f10f4f",
+  "memory_id": "specialist-profile-specialist-lib-core-63b0f18867692c03",
+  "candidate": {
+    "schema_version": "1",
+    "memory_id": "specialist-profile-specialist-lib-core-63b0f18867692c03",
+    "kind": "specialist",
+    "proposed_by_agent_id": "orchestrator",
+    "owning_agent_id": "specialist-lib-core",
+    "statement": "Own critical lib implementation paths that were not covered by the recorded expert portfolio.",
+    "source_type": "validated_bootstrap",
+    "supporting_commit": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+    "evidence": [
+      {
+        "evidence_id": "evidence-39fdf9eb36ac2b22d95583b4",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/error.js",
+        "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+        "source_commit_time": "2026-05-29T09:03:21.000Z",
+        "sha256": "98ac5e1b63894792fa7740e5fb2b79ef8c016d94fc41e55bb6ff85fff3346e72",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/error.js",
+        "observed_at": "2026-05-29T09:03:21.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-3ab1358b1b18bfb7d717c724",
+        "source_type": "validated_bootstrap",
+        "repository_path": "tests/testHelpers.js",
+        "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+        "source_commit_time": "2026-05-29T09:03:21.000Z",
+        "sha256": "b9c9d5b92691b0ee944528097d4e3da77d1ae1b1dd885d830c0bfa80c3dafbd4",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: tests/testHelpers.js",
+        "observed_at": "2026-05-29T09:03:21.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-924493dd7f273fa10e713902",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/help.js",
+        "commit_sha": "ba6d13ddb4243e5913367734f8c159089ffe7834",
+        "source_commit_time": "2026-05-29T09:03:21.000Z",
+        "sha256": "c1a58d89555b8c0cef5c3da9b173c998ce1faf43fe2cdcb331c0fd2c3a455c38",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/help.js",
+        "observed_at": "2026-05-29T09:03:21.000Z",
+        "actor": "agentify-specialist-discovery"
+      }
+    ],
+    "confidence": "low",
+    "dependent_paths": [
+      "lib/error.js",
+      "lib/help.js",
+      "tests/testHelpers.js"
+    ],
+    "invalidation_conditions": [
+      "Revalidate when any specialist freshness dependency changes or disappears."
+    ],
+    "contradicts": [],
+    "human_attribution": null,
+    "tags": [
+      "domain-lib-core",
+      "specialist-profile"
+    ],
+    "proposed_at": "2026-05-29T09:03:21.000Z",
+    "payload": {
+      "specialist_id": "specialist-lib-core",
+      "domain": "lib-core",
+      "owned_paths": [
+        "lib/error.js",
+        "lib/help.js"
+      ],
+      "observed_paths": [
+        "lib/error.js",
+        "lib/help.js",
+        "tests/testHelpers.js"
+      ],
+      "contracts": [],
+      "patterns": [],
+      "pitfalls": [],
+      "related_specialists": [
+        "specialist-cli-option-argument-parsing"
+      ],
+      "validation_commands": [
+        "npm run test-all"
+      ]
+    },
+    "candidate_id": "candidate-a4a5ca091d44d6e0b140dac4e5f10f4f",
+    "candidate_digest": "f1acf72d6efc80fa4dd144c863d5a0ea6778aa7bc8d8b3f4d90d8c0d6edd008a"
+  },
+  "decision": "accepted",
+  "actor": "knowledge-maintainer",
+  "reason": "accept specialist portfolio 50c3f7c7a3395110a64b29d884424586b7bb9bc8d23ebb93552fe29dd72439f9",
+  "occurred_at": "2026-08-24T04:02:57.819Z",
+  "candidate_digest": "f1acf72d6efc80fa4dd144c863d5a0ea6778aa7bc8d8b3f4d90d8c0d6edd008a",
+  "resulting_memory_id": "specialist-profile-specialist-lib-core-63b0f18867692c03",
+  "event_digest": "e00ffe654c276459673dce2114343d87429d3f5642a7749d6eb5440d6e4fc911"
+}
