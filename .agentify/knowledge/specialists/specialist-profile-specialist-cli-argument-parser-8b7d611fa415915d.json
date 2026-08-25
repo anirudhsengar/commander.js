@@ -1,0 +1,274 @@
+{
+  "schema_version": "1",
+  "memory_id": "specialist-profile-specialist-cli-argument-parser-8b7d611fa415915d",
+  "revision": 1,
+  "kind": "specialist",
+  "owning_agent_id": "specialist-cli-argument-parser",
+  "statement": "Parses argv into operands/unknown and produces typed option and command-argument values per command.",
+  "source_type": "validated_bootstrap",
+  "supporting_commit": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+  "evidence": [
+    {
+      "evidence_id": "evidence-1697a71ad3f8e8935a3b3300",
+      "source_type": "validated_bootstrap",
+      "repository_path": "docs/options-in-depth.md",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "b76aea8f32955b2a92bb7312f2ede968552d49e5d8a7e2051df8b3d58315c44d",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: docs/options-in-depth.md",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-1f052897f12d791ce8184dd1",
+      "source_type": "validated_bootstrap",
+      "repository_path": "tests/command.parseOptions.test.js",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "88ef98b8772040f20580390f540aed17a75b3a5b44bf99e2f70ee2c634a92d6d",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: tests/command.parseOptions.test.js",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-712dd345571c1eb457e580a7",
+      "source_type": "validated_bootstrap",
+      "repository_path": "lib/command.js",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "751c19479dac3e3f415fbbd709df90d25c595034f699dba7bef6eeab4dc1304b",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: lib/command.js",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-cb4149b8587a5ed542e9a745",
+      "source_type": "validated_bootstrap",
+      "repository_path": "lib/error.js",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "98ac5e1b63894792fa7740e5fb2b79ef8c016d94fc41e55bb6ff85fff3346e72",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: lib/error.js",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-dd80cc57d7359a992525eedc",
+      "source_type": "validated_bootstrap",
+      "repository_path": "lib/option.js",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "29fc1d0311f16f33fd0df2d8589c93b0a7e37fb89afd852672ba3b7083fa1515",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: lib/option.js",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-fa5c9035f320e213fae618fe",
+      "source_type": "validated_bootstrap",
+      "repository_path": "lib/argument.js",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "a86c43174d904198b92ece266e97b6b711e640f3b89ac45291b682a753e145e4",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: lib/argument.js",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    }
+  ],
+  "confidence": "high",
+  "freshness": "current",
+  "dependent_paths": [
+    "docs/options-in-depth.md",
+    "lib/argument.js",
+    "lib/command.js",
+    "lib/error.js",
+    "lib/option.js",
+    "tests/command.parseOptions.test.js"
+  ],
+  "invalidation_conditions": [
+    "Revalidate when any specialist freshness dependency changes or disappears."
+  ],
+  "superseded_by": null,
+  "contradicts": [],
+  "human_attribution": null,
+  "tags": [
+    "concern-cli-argument-parser",
+    "specialist-profile"
+  ],
+  "accepted_candidate_ids": [
+    "candidate-f91e56be80891778864a150fa2ce492d"
+  ],
+  "created_at": "2026-08-25T11:04:02.600Z",
+  "updated_at": "2026-08-25T11:04:02.600Z",
+  "semantic_digest": "cc188aae3ae95d1585a224f67aa103d2d5ee27fdc18741976f8395eec550d5b8",
+  "payload": {
+    "specialist_id": "specialist-cli-argument-parser",
+    "concern": "CLI argument parser",
+    "one_line": "Parses argv into operands/unknown and produces typed option and command-argument values per command.",
+    "covers": "argv intake, option scanning, value-source precedence, environment and implied options, argument coercion, mandatory/conflict checks, and parser regression contracts.",
+    "excludes": "Help formatting, executable subcommand launching, lifecycle hook ordering, and the derived TypeScript declaration surface.",
+    "flows": [
+      {
+        "name": "argv to typed options",
+        "description": "Normalize user argv, scan flags, coerce values, apply env/implied precedence, and validate the leaf command.",
+        "steps": [
+          {
+            "path": "lib/command.js",
+            "what_happens": "parse and _prepareUserArgs normalize argv before _parseCommand scans it."
+          },
+          {
+            "path": "lib/command.js",
+            "what_happens": "parseOptions emits option events and addOption listeners apply parseArg, variadic collection, and source tracking."
+          },
+          {
+            "path": "lib/option.js",
+            "what_happens": "Option and DualOptions define flag syntax and dual-option value resolution."
+          },
+          {
+            "path": "lib/argument.js",
+            "what_happens": "Argument defines required, optional, variadic, choice, default, and parseArg behavior."
+          },
+          {
+            "path": "tests/command.parseOptions.test.js",
+            "what_happens": "Regression tests pin operands, unknown tokens, --, short bundles, and long equals parsing."
+          }
+        ]
+      }
+    ],
+    "touchpoints": [
+      {
+        "path": "docs/options-in-depth.md",
+        "symbol": "Options taking varying numbers of option-arguments",
+        "role": "Documents parsing invariants and ambiguity controls.",
+        "line_range": [
+          1,
+          142
+        ],
+        "centrality": "supporting"
+      },
+      {
+        "path": "lib/argument.js",
+        "symbol": "Argument",
+        "role": "Encodes command-argument syntax and processing hooks.",
+        "line_range": [
+          1,
+          122
+        ],
+        "centrality": "supporting"
+      },
+      {
+        "path": "lib/command.js",
+        "symbol": "parse, parseAsync, parseOptions, _parseCommand, _parseOptionsEnv, _parseOptionsImplied, _processArguments, addOption",
+        "role": "Owns the argv to validated values pipeline and scanner-to-value event boundary.",
+        "line_range": [
+          990,
+          1705
+        ],
+        "centrality": "core"
+      },
+      {
+        "path": "lib/error.js",
+        "symbol": "CommanderError and InvalidArgumentError",
+        "role": "Provides stable typed errors for parser failures.",
+        "line_range": [
+          1,
+          38
+        ],
+        "centrality": "supporting"
+      },
+      {
+        "path": "lib/option.js",
+        "symbol": "Option and DualOptions",
+        "role": "Encapsulates flag syntax, value coercion hooks, variadic values, and dual-option disambiguation.",
+        "line_range": [
+          1,
+          343
+        ],
+        "centrality": "core"
+      },
+      {
+        "path": "tests/command.parseOptions.test.js",
+        "symbol": "Command.parseOptions tests",
+        "role": "Locks scanner behavior and ambiguity rules.",
+        "line_range": [
+          1,
+          396
+        ],
+        "centrality": "core"
+      }
+    ],
+    "invariants": [
+      {
+        "rule": "parseOptions emits option events and addOption listeners are the value-writing path for CLI and environment sources.",
+        "why": "Keeps scanning separate from coercion, variadic collection, and source tracking.",
+        "reference": "lib/command.js"
+      },
+      {
+        "rule": "Environment values do not overwrite CLI values and only fill permitted lower-priority sources.",
+        "why": "Preserves predictable source precedence.",
+        "reference": "lib/command.js"
+      },
+      {
+        "rule": "The -- token ends option parsing and preserves the remaining tail as operands.",
+        "why": "Supports literal arguments and documented POSIX behavior.",
+        "reference": "tests/command.parseOptions.test.js"
+      },
+      {
+        "rule": "Optional option values do not consume a following token that looks like another option unless it is recognized as a negative number.",
+        "why": "Prevents one flag from stealing another flag's token.",
+        "reference": "lib/command.js"
+      }
+    ],
+    "pitfalls": [
+      {
+        "risk": "Negative command arguments in a non-leaf command are treated as unknown options.",
+        "consequence": "Valid-looking negative values can produce commander.unknownOption errors.",
+        "reference": "tests/negatives.test.js"
+      },
+      {
+        "risk": "Short flag bundles such as -db can consume b as d's value under the default combination rule.",
+        "consequence": "The intended boolean b option is silently absent.",
+        "reference": "tests/command.parseOptions.test.js"
+      }
+    ],
+    "entry_questions": [
+      "Does a new flag string interact with short bundles, optional values, or negative-number detection?",
+      "Does it preserve -- and unknown-tail behavior?",
+      "Does the change alter default/config/env/cli/implied precedence?"
+    ],
+    "context_paths": [
+      "docs/options-in-depth.md",
+      "lib/argument.js",
+      "lib/command.js",
+      "lib/error.js",
+      "lib/option.js",
+      "tests/command.parseOptions.test.js"
+    ],
+    "related_specialists": [],
+    "validation_commands": [
+      "add regression test under tests/",
+      "add unit tests under tests/",
+      "npm pack --dry-run",
+      "npm run check",
+      "npm run check:format",
+      "npm run check:lint",
+      "npm run check:type",
+      "npm test",
+      "update JSDoc on lib/*.js",
+      "update typings/index.d.ts and typings/index.test-d.ts when public API changes"
+    ]
+  },
+  "content_digest": "e2a4b5c151a268d05ae25305c808149724932c68f04e35c4267e36e5cd34e80a"
+}

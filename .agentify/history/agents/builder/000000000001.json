@@ -1,0 +1,52 @@
+{
+  "schema_version": "1",
+  "event_type": "entity_mutation",
+  "entity_type": "agent_identity",
+  "entity_id": "builder",
+  "revision": 1,
+  "operation": "create",
+  "actor": "agentify-installer",
+  "reason": "initialize persistent builder identity",
+  "occurred_at": "2026-08-25T10:05:08.726Z",
+  "before_digest": null,
+  "after_digest": "ab605a8dd59203bdc54e23a729b00f95e241a4e8836ca51256c4e5072bf41e0d",
+  "after": {
+    "schema_version": "1",
+    "agent_id": "builder",
+    "revision": 1,
+    "role": "builder",
+    "display_name": "Task Builder",
+    "domain": null,
+    "status": "active",
+    "read_only": false,
+    "write_authority": "application_task",
+    "github_write_authority": "none",
+    "memory_kinds": [
+      "codebase",
+      "episode",
+      "policy",
+      "procedure",
+      "specialist"
+    ],
+    "supporting_commit": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+    "evidence": [
+      {
+        "evidence_id": "evidence-af781f3017705d24af4b1fe3",
+        "source_type": "validated_bootstrap",
+        "repository_path": "Readme.md",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "e219aeefbaea202ffb39b94a50812a4a2e69e91b67db3a5e39f3e0eeae2d7686",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: Readme.md",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "anirudhsengar"
+      }
+    ],
+    "created_at": "2026-08-25T10:05:08.726Z",
+    "updated_at": "2026-08-25T10:05:08.726Z",
+    "content_digest": "ab605a8dd59203bdc54e23a729b00f95e241a4e8836ca51256c4e5072bf41e0d"
+  },
+  "event_digest": "1a4381a80c52b5b6ccc906d78f66be6ae91c95b3feec733ee211d9b2427e101f"
+}

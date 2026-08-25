@@ -1,0 +1,107 @@
+{
+  "schema_version": "1",
+  "memory_id": "procedure-validate-repository-change-f652350b5aa9f13b",
+  "revision": 1,
+  "kind": "procedure",
+  "owning_agent_id": "orchestrator",
+  "statement": "Run the repository's authoritative validation contract before review.",
+  "source_type": "validated_bootstrap",
+  "supporting_commit": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+  "evidence": [
+    {
+      "evidence_id": "evidence-89746d7a4ac6a2eca190e041",
+      "source_type": "validated_bootstrap",
+      "repository_path": "package.json",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "6ea3e19871a9a05fa0c8b89595b6df05d23d266936b9785607128fd420864337",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: package.json",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    },
+    {
+      "evidence_id": "evidence-a4b28fee4e5ab5d11eecfb51",
+      "source_type": "validated_bootstrap",
+      "repository_path": "index.js",
+      "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+      "sha256": "3b1110c896b70704627d415e6658953a5a6f099e0b141311c73dfb06e55bdbcc",
+      "line_start": null,
+      "line_end": null,
+      "external_ref": null,
+      "description": "Tracked repository evidence for specialist and procedure discovery: index.js",
+      "observed_at": "2026-08-25T07:20:42.000Z",
+      "actor": "agentify-specialist-discovery"
+    }
+  ],
+  "confidence": "medium",
+  "freshness": "current",
+  "dependent_paths": [
+    "index.js",
+    "package.json"
+  ],
+  "invalidation_conditions": [
+    "Revalidate when a required context path or authoritative validation command changes."
+  ],
+  "superseded_by": null,
+  "contradicts": [],
+  "human_attribution": null,
+  "tags": [
+    "procedure",
+    "procedure-validate-repository-change"
+  ],
+  "accepted_candidate_ids": [
+    "candidate-418e0784568d87b71713de55fe790cdf"
+  ],
+  "created_at": "2026-08-25T11:04:02.851Z",
+  "updated_at": "2026-08-25T11:04:02.851Z",
+  "semantic_digest": "2d3ea33ccfb7511ef4f7052ce3d07531b9fee993eeb08c887975bddb4b8645ca",
+  "payload": {
+    "name": "validate-repository-change",
+    "trigger_conditions": [
+      "before review",
+      "release check",
+      "test implementation",
+      "validate change"
+    ],
+    "required_context_paths": [
+      "index.js",
+      "package.json"
+    ],
+    "allowed_commands": [
+      "add regression test under tests/",
+      "add unit tests under tests/",
+      "npm pack --dry-run",
+      "npm run check",
+      "npm run check:format",
+      "npm run check:lint",
+      "npm run check:type",
+      "npm test",
+      "update JSDoc on lib/*.js",
+      "update typings/index.d.ts and typings/index.test-d.ts when public API changes"
+    ],
+    "expected_file_patterns": [],
+    "side_effects": [
+      "May create repository-local test, build, or coverage artifacts."
+    ],
+    "validation_commands": [
+      "add regression test under tests/",
+      "add unit tests under tests/",
+      "npm pack --dry-run",
+      "npm run check",
+      "npm run check:format",
+      "npm run check:lint",
+      "npm run check:type",
+      "npm test",
+      "update JSDoc on lib/*.js",
+      "update typings/index.d.ts and typings/index.test-d.ts when public API changes"
+    ],
+    "recovery_steps": [
+      "Stop after the first deterministic failure and preserve its output.",
+      "Repair the root cause without weakening validation or repository policy.",
+      "Rerun the focused command, then the complete required validation set."
+    ]
+  },
+  "content_digest": "8358e30dd4325f77d565f0794bf4e1c9cbcda3d57d2b47c73cd11714fe7eb333"
+}

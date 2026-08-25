@@ -1,0 +1,1051 @@
+{
+  "meta": {
+    "project_type": "unknown",
+    "languages": [],
+    "frameworks": [],
+    "domain_hypothesis": "unknown",
+    "lifecycle": {
+      "sdlc_model": "GitHub Flow with develop integration, maintainer-controlled SemVer releases, and an Agentify issue-to-unmerged-draft-PR loop",
+      "issue_types": [
+        "bug_report",
+        "feature_request",
+        "chore_maintenance",
+        "security_vulnerability",
+        "agentify_queue_task"
+      ],
+      "review_loop": {
+        "present": true,
+        "kind": "none"
+      },
+      "documentation_loop": {
+        "present": true,
+        "kind": "none"
+      },
+      "conditional_docs": {
+        "present": true,
+        "path": "CONTRIBUTING.md",
+        "last_updated": null,
+        "entries_count": 5
+      },
+      "aiw_scripts": [],
+      "agent_definitions": {
+        "count": 4,
+        "paths": [
+          ".agentify/agents/orchestrator.json",
+          ".agentify/agents/roles/builder.json",
+          ".agentify/agents/roles/knowledge-maintainer.json",
+          ".agentify/agents/roles/reviewer.json"
+        ]
+      }
+    },
+    "documentation": {
+      "agents_md": "AGENTS.md",
+      "agents_md_line_count": 11,
+      "has_ai_docs": true,
+      "has_app_docs": false,
+      "has_specs": false,
+      "conditional_docs_path": "CONTRIBUTING.md",
+      "readme_metrics": {
+        "present": true,
+        "line_count": 1173,
+        "section_count": 15
+      },
+      "ai_docs_freshness": {
+        "last_updated": "2026-08-25",
+        "file_count": 7
+      },
+      "specs_archive": {
+        "present": false,
+        "file_count": 0,
+        "date_range": null
+      },
+      "postmortems_dir": null,
+      "changelog_present": true
+    }
+  },
+  "skeleton": {
+    "top_level_tree": [
+      "package.json",
+      "Readme.md",
+      "index.js",
+      "lib/",
+      "typings/",
+      "tests/",
+      "examples/",
+      "docs/",
+      "CONTRIBUTING.md",
+      "SETUP.md",
+      ".github/",
+      "AGENTS.md",
+      ".agentify/"
+    ],
+    "entry_points": [
+      {
+        "path": "index.js",
+        "role": "Public package entry point",
+        "language": "JavaScript",
+        "run_command": "node --input-type=module -e \"import('commander')\""
+      },
+      {
+        "path": "package.json",
+        "role": "Package metadata and scripts",
+        "language": "JSON",
+        "run_command": "npm test"
+      }
+    ],
+    "code_test_mirror": {
+      "observed": false,
+      "pattern": "unknown"
+    },
+    "first_5_files_for_fresh_agent": [
+      {
+        "path": "Readme.md",
+        "why": "API overview"
+      },
+      {
+        "path": "package.json",
+        "why": "exports and validation scripts"
+      },
+      {
+        "path": "index.js",
+        "why": "public export boundary"
+      },
+      {
+        "path": "lib/command.js",
+        "why": "core command parser and lifecycle"
+      },
+      {
+        "path": "tests/command.test.js",
+        "why": "core runtime tests"
+      }
+    ],
+    "app_vs_agentic_layer": {
+      "app_layer": "unknown",
+      "agentic_layer": null,
+      "bleed_risk_paths": []
+    }
+  },
+  "module_graph": {
+    "edges": [
+      {
+        "from": "index.js",
+        "to": "lib/command.js",
+        "kind": "public import"
+      },
+      {
+        "from": "index.js",
+        "to": "lib/option.js",
+        "kind": "public import"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/argument.js",
+        "kind": "core dependency"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/error.js",
+        "kind": "error contract"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "lib/help.js",
+        "kind": "help rendering"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "node:child_process",
+        "kind": "executable subcommand process boundary"
+      },
+      {
+        "from": "lib/command.js",
+        "to": "node:process",
+        "kind": "stdout/stderr and environment boundary"
+      }
+    ],
+    "parallelizable_subtrees": [
+      [
+        "lib/error.js",
+        "lib/suggestSimilar.js"
+      ],
+      [
+        "lib/argument.js",
+        "lib/option.js"
+      ],
+      [
+        "lib/help.js"
+      ],
+      [
+        "lib/command.js"
+      ]
+    ],
+    "shared_state": [],
+    "client_server_split": null,
+    "shared_abstractions": [
+      "lib/error.js",
+      "lib/argument.js"
+    ]
+  },
+  "type_contract_surface": {
+    "pydantic_models": [],
+    "typescript_interfaces": [
+      {
+        "path": "typings/index.d.ts",
+        "name": "Command",
+        "kind": "class",
+        "language": "TypeScript",
+        "fields": [
+          "args",
+          "processedArgs",
+          "commands",
+          "options",
+          "registeredArguments",
+          "parent"
+        ]
+      }
+    ],
+    "db_models": [],
+    "idks": [],
+    "stable_types": [
+      "typings/index.d.ts: Command",
+      "typings/index.d.ts: Option",
+      "typings/index.d.ts: Argument",
+      "typings/index.d.ts: CommanderError"
+    ],
+    "volatile_types": [],
+    "one_type_trace": null
+  },
+  "conventions": {
+    "naming": {
+      "files": "Lowercase single-word or camelCase/kebab-case JavaScript files; test files use feature suffixes such as command.action.test.js",
+      "classes": "PascalCase",
+      "functions": "camelCase verb-oriented names",
+      "branches": "not observed",
+      "commits": "not observed"
+    },
+    "error_handling": {
+      "raise_vs_return": "raise",
+      "custom_exceptions": true,
+      "log_then_throw": false
+    },
+    "logging": {
+      "pattern": "Indirect output through Command.configureOutput writeOut/writeErr and error paths; tests inject no-op sinks rather than direct console output",
+      "observed": true
+    },
+    "state_passing": "constructor_injection",
+    "file_size": {
+      "observed_avg": 0,
+      "observed_max": 0
+    },
+    "patterns": []
+  },
+  "pitfalls": [
+    {
+      "module": "lib/command.js",
+      "what": "Unknown-option checking is intentionally skipped on some parse branches to preserve better unknown-command or missing-action errors.",
+      "consequence": "A refactor that centralizes or always invokes the check can change public error precedence and mask more useful diagnostics.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1601
+    },
+    {
+      "module": "lib/command.js executable subcommands",
+      "what": "Spawned executable subcommands install process signal listeners for each child and use a hard-coded source-extension search list.",
+      "consequence": "Repeated dispatch can accumulate listeners, while new extensions or platform differences can cause missed executables and confusing spawn failures.",
+      "source_reference": "lib/command.js",
+      "line_ref": 1172
+    },
+    {
+      "module": "lib/command.js option parsing",
+      "what": "Negative command arguments are accepted only under a leaf-only parsing rule and numeric recognition regex.",
+      "consequence": "Negative values in non-leaf contexts can be treated as unknown options; changing parser order risks behavioral regressions.",
+      "source_reference": "tests/negatives.test.js",
+      "line_ref": 191
+    }
+  ],
+  "validation_surface": {
+    "test_command": "npm test",
+    "test_runtime_seconds_estimate": 0,
+    "lint_command": "npm run check:lint",
+    "typecheck_command": "npm run check:type",
+    "e2e_command": null,
+    "spec_compliance_evidence": [
+      ".github/workflows/tests.yml runs npm ci, npm test, and npm run check on Node 22.x, 24.x, and 26.x across Ubuntu, Windows, and macOS.",
+      "CONTRIBUTING.md requires npm run test and npm run check for pull requests."
+    ],
+    "severity_taxonomy": [
+      "blocker",
+      "tech_debt",
+      "nit"
+    ],
+    "per_change_type": {
+      "chore": {
+        "mandatory": [
+          "npm run check:format",
+          "npm run check:lint"
+        ],
+        "optional": [
+          "npm run check:type",
+          "node --test"
+        ]
+      },
+      "bug": {
+        "mandatory": [
+          "add regression test under tests/",
+          "npm test",
+          "npm run check"
+        ],
+        "optional": [
+          "npm run check:type:js"
+        ]
+      },
+      "feature": {
+        "mandatory": [
+          "add unit tests under tests/",
+          "update typings/index.d.ts and typings/index.test-d.ts when public API changes",
+          "update JSDoc on lib/*.js",
+          "npm test",
+          "npm run check"
+        ],
+        "optional": [
+          "update Readme.md/docs/*.md/examples/ when applicable"
+        ]
+      }
+    },
+    "coverage": {
+      "D6_validation": {
+        "status": "covered",
+        "confidence": "high",
+        "evidence_summary": "Validation commands and mandatory per-change gates are directly specified in package.json, CI, and CONTRIBUTING.md.",
+        "evidence": [
+          {
+            "path": "package.json",
+            "excerpt": "\"test\": \"node --test && npm run check:type:ts\"",
+            "kind": "positive"
+          },
+          {
+            "path": ".github/workflows/tests.yml",
+            "excerpt": "run: npm ci",
+            "kind": "positive"
+          },
+          {
+            "path": "CONTRIBUTING.md",
+            "excerpt": "Check the tests succeed, including format and lint.",
+            "kind": "positive"
+          }
+        ]
+      }
+    }
+  },
+  "operational_surface": {
+    "build": {
+      "command": "npm pack --dry-run",
+      "recipe_file": "package.json (files/exports; no compile build script)"
+    },
+    "run": {
+      "command": "node examples/argument.js",
+      "env_vars_required": [],
+      "ports": [],
+      "services": [],
+      "dependencies": [
+        "Node.js >=22.12.0"
+      ]
+    },
+    "deploy": null,
+    "env_vars": [],
+    "ci_cd": {
+      "triggers": [
+        "push",
+        "pull_request",
+        "workflow_dispatch",
+        "weekly CodeQL schedule"
+      ],
+      "gates": [
+        "npm ci",
+        "npm test",
+        "npm run check",
+        "CodeQL on master/develop"
+      ],
+      "artifacts": [
+        "index.js",
+        "lib/*.js",
+        "typings/index.d.ts"
+      ]
+    },
+    "git_workflow": {
+      "main_branch": "master",
+      "branch_naming": "not observed",
+      "worktree_pattern": "not observed",
+      "cleanup": "not observed"
+    },
+    "port_ranges": {
+      "dev": "unknown"
+    },
+    "shutdown_procedure": {
+      "script": null,
+      "commands": []
+    },
+    "spawned_subprocesses": []
+  },
+  "security_surface": {
+    "paths": {
+      "zero_access": [
+        ".env",
+        ".env.*",
+        "secrets.*",
+        "*.pem",
+        "*.key",
+        "~/.ssh/**",
+        ".agentify/runtime/audit/**",
+        ".agentify/state-transactions/**"
+      ],
+      "read_only": [
+        ".git/**",
+        "package-lock.json",
+        ".github/workflows/**",
+        "SECURITY.md",
+        "CONTRIBUTING.md",
+        "SETUP.md"
+      ],
+      "no_delete": [
+        ".git/**",
+        ".github/agentify/**",
+        ".github/workflows/**",
+        "package-lock.json",
+        "LICENSE",
+        "SECURITY.md"
+      ],
+      "fully_writable": [
+        "lib/**",
+        "typings/**",
+        "tests/**",
+        "examples/**",
+        "index.js"
+      ]
+    },
+    "bash_safe_patterns": [],
+    "bash_blocked_patterns": [
+      "rm -rf and recursive/force deletion",
+      "git reset --hard",
+      "git clean -f",
+      "git push --force",
+      "sudo",
+      "curl upload flags (-T/--upload-file)",
+      "nc/netcat",
+      "dd to device files",
+      "mkfs",
+      "shutdown/poweroff/reboot",
+      "npm publish",
+      "gh secret set/list/delete",
+      "git merge",
+      "git push to master/main/develop"
+    ],
+    "banned_interpreters": [],
+    "env_allowlist": [
+      "NO_COLOR",
+      "FORCE_COLOR",
+      "CLICOLOR_FORCE",
+      "NODE_ENV",
+      "PATH",
+      "HOME",
+      "LANG",
+      "LC_ALL",
+      "TERM"
+    ],
+    "production_credentials": [],
+    "damage_control_rules": [
+      "Credential-named environment values must not be placed in command arguments or repository files.",
+      "Application merge and deployment are disabled by repository policy.",
+      "Learned output must not modify application source, dependencies, workflow permissions, policy, or executable runtime code.",
+      "Private vulnerabilities must use the Tidelift security contact rather than public issues or pull requests."
+    ],
+    "security_checklist": {
+      "tools": [],
+      "commands": [],
+      "paths": [],
+      "env": [],
+      "blocks": [],
+      "logs": []
+    }
+  },
+  "coverage": {
+    "D1_topography": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Root inventory, package metadata, and main entry point establish the source, typings, tests, examples, docs, and automation reading order.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"main\": \"./index.js\"",
+          "kind": "positive"
+        },
+        {
+          "path": "Readme.md",
+          "excerpt": "Commander.js is a complete solution for Node.js command-line interfaces.",
+          "kind": "positive"
+        },
+        {
+          "path": "index.js",
+          "excerpt": "export { Command, Option, Argument, Help };",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D2_module_boundaries": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "The public index imports the core classes, while Command orchestrates argument/option/help/error modules and is the sole process and child-process boundary.",
+      "evidence": [
+        {
+          "path": "index.js",
+          "excerpt": "import { Command } from './lib/command.js';",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "import childProcess from 'node:child_process';",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "import { Option, DualOptions } from './option.js';",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D3_type_contract": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "The public TypeScript declaration defines Command's stable fields and is checked against the JavaScript export and tsd runtime-facing type tests.",
+      "evidence": [
+        {
+          "path": "typings/index.d.ts",
+          "excerpt": "export class Command { args: string[]; processedArgs: any[]; readonly commands: readonly Command[]; readonly options: readonly Option[]; readonly registeredArguments: readonly Argument[]; parent: Command | null;",
+          "kind": "positive"
+        },
+        {
+          "path": "typings/index.test-d.ts",
+          "excerpt": "const program: commander.Command = new commander.Command();",
+          "kind": "positive"
+        },
+        {
+          "path": "index.js",
+          "excerpt": "export const program = new Command();",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D4_conventions": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Source and tests use explicit ESM extensions, PascalCase classes, camelCase methods, underscore-prefixed internals, fluent setters, and injected output sinks instead of direct console logging.",
+      "evidence": [
+        {
+          "path": "index.js",
+          "excerpt": "import { Argument } from './lib/argument.js';",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/error.js",
+          "excerpt": "export class CommanderError extends Error {",
+          "kind": "positive"
+        },
+        {
+          "path": "tests/testHelpers.js",
+          "excerpt": "configureOutput({ writeOut: () => {}, writeErr: () => {} })",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D5_pitfalls": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Source comments and tests document intentional parser error precedence, deprecated live paths, cross-platform executable-subcommand fragility, and negative-argument limitations.",
+      "evidence": [
+        {
+          "path": "lib/command.js",
+          "excerpt": "// We do not always call this check to avoid masking a \"better\" error, like unknown command.",
+          "kind": "positive"
+        },
+        {
+          "path": "tests/negatives.test.js",
+          "excerpt": "// Known limitation in parsing. Only allowed negative command-arguments in leaf commands",
+          "kind": "positive"
+        },
+        {
+          "path": "tests/command.executableSubcommand.search.test.cjs",
+          "excerpt": "// This is very fragile on implementation details of how subcommand spawned.",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D6_validation": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "package scripts and CI define npm ci, npm test, npm run check, lint, format, and typecheck gates; contributing guidance requires test and check for pull requests.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"test\": \"node --test && npm run check:type:ts\"",
+          "kind": "positive"
+        },
+        {
+          "path": "package.json",
+          "excerpt": "\"check\": \"npm run check:type && npm run check:lint && npm run check:format\"",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/workflows/tests.yml",
+          "excerpt": "- name: npm run check\n      run: npm run check",
+          "kind": "positive"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "- `npm run test`\n- `npm run check`",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D7_operational": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "This is a source-published Node library with no compile/build service; npm pack previews the distributable artifact, examples run directly under Node, and CI validates on master-oriented repository automation.",
+      "evidence": [
+        {
+          "path": "package.json",
+          "excerpt": "\"files\": [\"index.js\", \"lib/*.js\", \"typings/index.d.ts\", \"package-support.json\"]",
+          "kind": "positive"
+        },
+        {
+          "path": "package.json",
+          "excerpt": "\"engines\": { \"node\": \">=22.12.0\" }",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/workflows/tests.yml",
+          "excerpt": "on: [push, pull_request, workflow_dispatch]",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/agentify-task-policy.json",
+          "excerpt": "\"default_branch\": \"master\"",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D8_security": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Security policy routes vulnerabilities privately, SETUP defines credential confinement and fail-closed Agentify trust boundaries, and the task policy disables application merge/deployment while runtime command controls require destructive-operation blocks.",
+      "evidence": [
+        {
+          "path": "SECURITY.md",
+          "excerpt": "Please do not report security vulnerabilities through public GitHub issues or pull requests.",
+          "kind": "positive"
+        },
+        {
+          "path": "SETUP.md",
+          "excerpt": "Never place the payload in a command argument or repository file.",
+          "kind": "positive"
+        },
+        {
+          "path": "SETUP.md",
+          "excerpt": "Agentify never merges application changes, enables auto-merge, deploys, force-pushes an application branch",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/agentify-task-policy.json",
+          "excerpt": "\"application_merge\": \"disabled\",\n  \"application_deployment\": \"disabled\"",
+          "kind": "positive"
+        },
+        {
+          "path": "lib/command.js",
+          "excerpt": "if (process.env.NO_COLOR || process.env.FORCE_COLOR === '0'",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D9_process": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Contributing, release, security, CI, and Agentify policy surfaces show a maintainer-led GitHub Flow with develop integration, semantic-versioned releases, private security handling, and a separate issue-to-unmerged-draft agentic loop.",
+      "evidence": [
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "Please submit pull requests against the develop branch.",
+          "kind": "positive"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "excerpt": "Don't update the CHANGELOG or command version number. That gets done by maintainers when preparing the release.",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/release-policy.md",
+          "excerpt": "We follow Semantic Versioning",
+          "kind": "positive"
+        },
+        {
+          "path": "SECURITY.md",
+          "excerpt": "Tidelift will coordinate the fix and disclosure.",
+          "kind": "positive"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "stops at an unmerged draft pull request.",
+          "kind": "positive"
+        },
+        {
+          "path": ".github/PULL_REQUEST_TEMPLATE.md",
+          "excerpt": "Please submit pull requests against the develop branch.",
+          "kind": "positive"
+        }
+      ]
+    },
+    "D10_documentation": {
+      "status": "covered",
+      "confidence": "high",
+      "evidence_summary": "Readme.md is a substantial API guide with a section index and examples; docs/release-policy.md, CHANGELOG.md, CONTRIBUTING.md, SETUP.md, SECURITY.md, and AGENTS.md provide authoritative maintenance and Agentify documentation.",
+      "evidence": [
+        {
+          "path": "Readme.md",
+          "excerpt": "- [Installation](#installation)\n  - [Quick Start](#quick-start)\n  - [Options](#options)\n  - [Commands](#commands)",
+          "kind": "positive"
+        },
+        {
+          "path": "docs/release-policy.md",
+          "excerpt": "The current release line gets all updates: features, bug fixes, and security updates.",
+          "kind": "positive"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "excerpt": "All notable changes to this project will be documented in this file.",
+          "kind": "positive"
+        },
+        {
+          "path": "AGENTS.md",
+          "excerpt": "Agentify plans with a read-only planner and repository-specific read-only specialists",
+          "kind": "positive"
+        }
+      ]
+    }
+  },
+  "open_questions": [
+    "Initial draft: gather repository evidence before closing coverage."
+  ],
+  "exploration_log": [
+    {
+      "ts": "2026-08-25T10:52:06.420Z",
+      "action": "draft_bootstrap",
+      "target": ".",
+      "observation": "Created an honest gap-marked map to receive incremental audit evidence."
+    },
+    {
+      "ts": "2026-08-25T10:52:23.829Z",
+      "action": "gap_filler_delta",
+      "target": "D1_topography",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:52:23.833Z",
+      "action": "gap_filler_delta",
+      "target": "D1_topography",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:53:22.049Z",
+      "action": "gap_filler_delta",
+      "target": "D2_module_boundaries",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:53:22.051Z",
+      "action": "gap_filler_delta",
+      "target": "D2_module_boundaries",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:53:33.209Z",
+      "action": "gap_filler_delta",
+      "target": "D1_topography",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:53:33.212Z",
+      "action": "gap_filler_delta",
+      "target": "D1_topography",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:53:49.509Z",
+      "action": "gap_filler_delta",
+      "target": "D3_type_contract",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:53:49.512Z",
+      "action": "gap_filler_delta",
+      "target": "D3_type_contract",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:55:49.079Z",
+      "action": "gap_filler_delta",
+      "target": "D4_conventions",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:55:49.081Z",
+      "action": "gap_filler_delta",
+      "target": "D4_conventions",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:56:00.014Z",
+      "action": "gap_filler_delta",
+      "target": "D5_pitfalls",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:56:00.016Z",
+      "action": "gap_filler_delta",
+      "target": "D5_pitfalls",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:57:18.629Z",
+      "action": "gap_filler_delta",
+      "target": "D6_validation",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:57:18.630Z",
+      "action": "gap_filler_delta",
+      "target": "D6_validation",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:57:33.129Z",
+      "action": "gap_filler_delta",
+      "target": "D7_operational",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:57:33.131Z",
+      "action": "gap_filler_delta",
+      "target": "D7_operational",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:59:16.390Z",
+      "action": "gap_filler_delta",
+      "target": "D8_security",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:59:16.393Z",
+      "action": "gap_filler_delta",
+      "target": "D8_security",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:59:34.743Z",
+      "action": "gap_filler_delta",
+      "target": "D9_process",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:59:34.749Z",
+      "action": "gap_filler_delta",
+      "target": "D9_process",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T10:59:47.783Z",
+      "action": "gap_filler_delta",
+      "target": "D10_documentation",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    },
+    {
+      "ts": "2026-08-25T10:59:47.787Z",
+      "action": "gap_filler_delta",
+      "target": "D10_documentation",
+      "observation": "merged delta from write_map_delta (strategy=deep_merge)"
+    },
+    {
+      "ts": "2026-08-25T11:03:10.315Z",
+      "action": "gap_filler_delta",
+      "target": "(no-dim)",
+      "observation": "merged delta from write_map_delta (strategy=shallow_overwrite)"
+    }
+  ],
+  "schema_version": "1",
+  "generated_at": "2026-08-25T10:52:06.420Z",
+  "concern_evidence": {
+    "concerns": [
+      {
+        "concern": "CLI argument parser",
+        "one_line": "Parses argv into operands/unknown and produces typed option and command-argument values per command.",
+        "covers": "argv intake, option scanning, value-source precedence, environment and implied options, argument coercion, mandatory/conflict checks, and parser regression contracts.",
+        "excludes": "Help formatting, executable subcommand launching, lifecycle hook ordering, and the derived TypeScript declaration surface.",
+        "flows": [
+          {
+            "name": "argv to typed options",
+            "description": "Normalize user argv, scan flags, coerce values, apply env/implied precedence, and validate the leaf command.",
+            "steps": [
+              {
+                "path": "lib/command.js",
+                "what_happens": "parse and _prepareUserArgs normalize argv before _parseCommand scans it."
+              },
+              {
+                "path": "lib/command.js",
+                "what_happens": "parseOptions emits option events and addOption listeners apply parseArg, variadic collection, and source tracking."
+              },
+              {
+                "path": "lib/option.js",
+                "what_happens": "Option and DualOptions define flag syntax and dual-option value resolution."
+              },
+              {
+                "path": "lib/argument.js",
+                "what_happens": "Argument defines required, optional, variadic, choice, default, and parseArg behavior."
+              },
+              {
+                "path": "tests/command.parseOptions.test.js",
+                "what_happens": "Regression tests pin operands, unknown tokens, --, short bundles, and long equals parsing."
+              }
+            ]
+          }
+        ],
+        "touchpoints": [
+          {
+            "path": "lib/command.js",
+            "symbol": "parse, parseAsync, parseOptions, _parseCommand, _parseOptionsEnv, _parseOptionsImplied, _processArguments, addOption",
+            "role": "Owns the argv to validated values pipeline and scanner-to-value event boundary.",
+            "line_range": [
+              990,
+              1705
+            ],
+            "centrality": "core"
+          },
+          {
+            "path": "lib/option.js",
+            "symbol": "Option and DualOptions",
+            "role": "Encapsulates flag syntax, value coercion hooks, variadic values, and dual-option disambiguation.",
+            "line_range": [
+              1,
+              343
+            ],
+            "centrality": "core"
+          },
+          {
+            "path": "lib/argument.js",
+            "symbol": "Argument",
+            "role": "Encodes command-argument syntax and processing hooks.",
+            "line_range": [
+              1,
+              122
+            ],
+            "centrality": "supporting"
+          },
+          {
+            "path": "lib/error.js",
+            "symbol": "CommanderError and InvalidArgumentError",
+            "role": "Provides stable typed errors for parser failures.",
+            "line_range": [
+              1,
+              38
+            ],
+            "centrality": "supporting"
+          },
+          {
+            "path": "tests/command.parseOptions.test.js",
+            "symbol": "Command.parseOptions tests",
+            "role": "Locks scanner behavior and ambiguity rules.",
+            "line_range": [
+              1,
+              396
+            ],
+            "centrality": "core"
+          },
+          {
+            "path": "docs/options-in-depth.md",
+            "symbol": "Options taking varying numbers of option-arguments",
+            "role": "Documents parsing invariants and ambiguity controls.",
+            "line_range": [
+              1,
+              142
+            ],
+            "centrality": "supporting"
+          }
+        ],
+        "invariants": [
+          {
+            "rule": "parseOptions emits option events and addOption listeners are the value-writing path for CLI and environment sources.",
+            "why": "Keeps scanning separate from coercion, variadic collection, and source tracking.",
+            "reference": "lib/command.js"
+          },
+          {
+            "rule": "Environment values do not overwrite CLI values and only fill permitted lower-priority sources.",
+            "why": "Preserves predictable source precedence.",
+            "reference": "lib/command.js"
+          },
+          {
+            "rule": "The -- token ends option parsing and preserves the remaining tail as operands.",
+            "why": "Supports literal arguments and documented POSIX behavior.",
+            "reference": "tests/command.parseOptions.test.js"
+          },
+          {
+            "rule": "Optional option values do not consume a following token that looks like another option unless it is recognized as a negative number.",
+            "why": "Prevents one flag from stealing another flag's token.",
+            "reference": "lib/command.js"
+          }
+        ],
+        "pitfalls": [
+          {
+            "risk": "Negative command arguments in a non-leaf command are treated as unknown options.",
+            "consequence": "Valid-looking negative values can produce commander.unknownOption errors.",
+            "reference": "tests/negatives.test.js"
+          },
+          {
+            "risk": "Short flag bundles such as -db can consume b as d's value under the default combination rule.",
+            "consequence": "The intended boolean b option is silently absent.",
+            "reference": "tests/command.parseOptions.test.js"
+          }
+        ],
+        "entry_questions": [
+          "Does the change alter default/config/env/cli/implied precedence?",
+          "Does it preserve -- and unknown-tail behavior?",
+          "Does a new flag string interact with short bundles, optional values, or negative-number detection?"
+        ],
+        "validation": [
+          "npm test",
+          "npm run check"
+        ],
+        "spans_subtrees": [
+          "lib/",
+          "tests/",
+          "docs/",
+          "typings/",
+          "index.js"
+        ],
+        "stability": "high",
+        "recurrence": "high",
+        "confidence": "high",
+        "last_updated": "2026-08-25T00:00:00.000Z"
+      }
+    ],
+    "not_concerns": [
+      {
+        "candidate": "Option value source tracking",
+        "why_rejected": "It is bookkeeping used inside the CLI argument parser, with no independent test or documentation surface."
+      },
+      {
+        "candidate": "TypeScript definitions",
+        "why_rejected": "The declarations mirror the public runtime API and are not an independent end-to-end body of knowledge."
+      },
+      {
+        "candidate": "Test infrastructure",
+        "why_rejected": "Helpers and fixtures support the production concerns rather than defining a standalone specialty."
+      }
+    ]
+  }
+}

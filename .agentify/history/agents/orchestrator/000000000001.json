@@ -1,0 +1,53 @@
+{
+  "schema_version": "1",
+  "event_type": "entity_mutation",
+  "entity_type": "agent_identity",
+  "entity_id": "orchestrator",
+  "revision": 1,
+  "operation": "create",
+  "actor": "agentify-installer",
+  "reason": "initialize persistent orchestrator identity",
+  "occurred_at": "2026-08-25T10:05:08.726Z",
+  "before_digest": null,
+  "after_digest": "a56003f2af422781ccecb5139aceb778c4655a71829433b3dbafc782bd0f59d8",
+  "after": {
+    "schema_version": "1",
+    "agent_id": "orchestrator",
+    "revision": 1,
+    "role": "orchestrator",
+    "display_name": "Repository Orchestrator",
+    "domain": null,
+    "status": "active",
+    "read_only": true,
+    "write_authority": "none",
+    "github_write_authority": "none",
+    "memory_kinds": [
+      "codebase",
+      "episode",
+      "orchestrator",
+      "policy",
+      "procedure",
+      "specialist"
+    ],
+    "supporting_commit": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+    "evidence": [
+      {
+        "evidence_id": "evidence-af781f3017705d24af4b1fe3",
+        "source_type": "validated_bootstrap",
+        "repository_path": "Readme.md",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "e219aeefbaea202ffb39b94a50812a4a2e69e91b67db3a5e39f3e0eeae2d7686",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: Readme.md",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "anirudhsengar"
+      }
+    ],
+    "created_at": "2026-08-25T10:05:08.726Z",
+    "updated_at": "2026-08-25T10:05:08.726Z",
+    "content_digest": "a56003f2af422781ccecb5139aceb778c4655a71829433b3dbafc782bd0f59d8"
+  },
+  "event_digest": "8367605914598555d92fc0c647e9989e38f6cdf23fc56cb7398b5d1280d1ce2a"
+}

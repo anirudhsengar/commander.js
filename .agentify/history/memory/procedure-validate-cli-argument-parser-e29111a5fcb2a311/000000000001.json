@@ -1,0 +1,188 @@
+{
+  "schema_version": "1",
+  "event_type": "entity_mutation",
+  "entity_type": "memory_record",
+  "entity_id": "procedure-validate-cli-argument-parser-e29111a5fcb2a311",
+  "revision": 1,
+  "operation": "accept",
+  "actor": "knowledge-maintainer",
+  "reason": "accept procedure portfolio 8342e1078cf3a98aaa7a3fb167575bac3d1795425ea813494f31429daee06b6f",
+  "occurred_at": "2026-08-25T11:04:02.722Z",
+  "before_digest": null,
+  "after_digest": "5091fedbbce141e3fc6dfca5f79a9f3a26b5b33458a68d20b1c9f99f6ddae842",
+  "after": {
+    "schema_version": "1",
+    "memory_id": "procedure-validate-cli-argument-parser-e29111a5fcb2a311",
+    "revision": 1,
+    "kind": "procedure",
+    "owning_agent_id": "specialist-cli-argument-parser",
+    "statement": "Run the authoritative validation surface for CLI argument parser changes.",
+    "source_type": "validated_bootstrap",
+    "supporting_commit": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+    "evidence": [
+      {
+        "evidence_id": "evidence-1697a71ad3f8e8935a3b3300",
+        "source_type": "validated_bootstrap",
+        "repository_path": "docs/options-in-depth.md",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "b76aea8f32955b2a92bb7312f2ede968552d49e5d8a7e2051df8b3d58315c44d",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: docs/options-in-depth.md",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-1f052897f12d791ce8184dd1",
+        "source_type": "validated_bootstrap",
+        "repository_path": "tests/command.parseOptions.test.js",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "88ef98b8772040f20580390f540aed17a75b3a5b44bf99e2f70ee2c634a92d6d",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: tests/command.parseOptions.test.js",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-712dd345571c1eb457e580a7",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/command.js",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "751c19479dac3e3f415fbbd709df90d25c595034f699dba7bef6eeab4dc1304b",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/command.js",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-cb4149b8587a5ed542e9a745",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/error.js",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "98ac5e1b63894792fa7740e5fb2b79ef8c016d94fc41e55bb6ff85fff3346e72",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/error.js",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-dd80cc57d7359a992525eedc",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/option.js",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "29fc1d0311f16f33fd0df2d8589c93b0a7e37fb89afd852672ba3b7083fa1515",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/option.js",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "agentify-specialist-discovery"
+      },
+      {
+        "evidence_id": "evidence-fa5c9035f320e213fae618fe",
+        "source_type": "validated_bootstrap",
+        "repository_path": "lib/argument.js",
+        "commit_sha": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+        "sha256": "a86c43174d904198b92ece266e97b6b711e640f3b89ac45291b682a753e145e4",
+        "line_start": null,
+        "line_end": null,
+        "external_ref": null,
+        "description": "Tracked repository evidence for specialist and procedure discovery: lib/argument.js",
+        "observed_at": "2026-08-25T07:20:42.000Z",
+        "actor": "agentify-specialist-discovery"
+      }
+    ],
+    "confidence": "high",
+    "freshness": "current",
+    "dependent_paths": [
+      "docs/options-in-depth.md",
+      "lib/argument.js",
+      "lib/command.js",
+      "lib/error.js",
+      "lib/option.js",
+      "tests/command.parseOptions.test.js"
+    ],
+    "invalidation_conditions": [
+      "Revalidate when a required context path or authoritative validation command changes."
+    ],
+    "superseded_by": null,
+    "contradicts": [],
+    "human_attribution": null,
+    "tags": [
+      "procedure",
+      "procedure-validate-cli-argument-parser"
+    ],
+    "accepted_candidate_ids": [
+      "candidate-3d0208065c3a91c35801605d8994c9fa"
+    ],
+    "created_at": "2026-08-25T11:04:02.722Z",
+    "updated_at": "2026-08-25T11:04:02.722Z",
+    "semantic_digest": "c0547f2a38e03c8dbf6977a755440b1980b04941b69424008b0ccb02a7a2daa9",
+    "payload": {
+      "name": "validate-cli-argument-parser",
+      "trigger_conditions": [
+        "CLI argument parser change",
+        "Does a new flag string interact with short bundles, optional values, or negative-number detection?",
+        "Does it preserve -- and unknown-tail behavior?",
+        "Does the change alter default/config/env/cli/implied precedence?"
+      ],
+      "required_context_paths": [
+        "docs/options-in-depth.md",
+        "lib/argument.js",
+        "lib/command.js",
+        "lib/error.js",
+        "lib/option.js",
+        "tests/command.parseOptions.test.js"
+      ],
+      "allowed_commands": [
+        "add regression test under tests/",
+        "add unit tests under tests/",
+        "npm pack --dry-run",
+        "npm run check",
+        "npm run check:format",
+        "npm run check:lint",
+        "npm run check:type",
+        "npm test",
+        "update JSDoc on lib/*.js",
+        "update typings/index.d.ts and typings/index.test-d.ts when public API changes"
+      ],
+      "expected_file_patterns": [
+        "docs/options-in-depth.md",
+        "lib/argument.js",
+        "lib/command.js",
+        "lib/error.js",
+        "lib/option.js",
+        "tests/command.parseOptions.test.js"
+      ],
+      "side_effects": [
+        "May create repository-local test, build, or coverage artifacts."
+      ],
+      "validation_commands": [
+        "add regression test under tests/",
+        "add unit tests under tests/",
+        "npm pack --dry-run",
+        "npm run check",
+        "npm run check:format",
+        "npm run check:lint",
+        "npm run check:type",
+        "npm test",
+        "update JSDoc on lib/*.js",
+        "update typings/index.d.ts and typings/index.test-d.ts when public API changes"
+      ],
+      "recovery_steps": [
+        "Stop after the first deterministic failure and preserve its output.",
+        "Repair the root cause without weakening validation or repository policy.",
+        "Rerun the focused command, then the complete required validation set."
+      ]
+    },
+    "content_digest": "5091fedbbce141e3fc6dfca5f79a9f3a26b5b33458a68d20b1c9f99f6ddae842"
+  },
+  "event_digest": "f80c79341612f4fb035085babbf6f13090ca99ada8ecbf1d28feb413a0f351a5"
+}

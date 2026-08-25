@@ -1,0 +1,129 @@
+{
+  "format": "agentify_task_policy_configuration",
+  "schema_version": "2",
+  "configured": true,
+  "repository": {
+    "repository_id": "1341850477",
+    "full_name": "anirudhsengar/commander.js",
+    "default_branch": "master",
+    "current_commit": "9a9ae078e1ebf0e25a9e24c830dfe8b1f694e2b8",
+    "current_branch": "master",
+    "origin_url": "https://github.com/anirudhsengar/commander.js.git",
+    "actor_login": "anirudhsengar",
+    "actor_permission": "admin",
+    "default_branch_policy": "unprotected"
+  },
+  "model_network_posture": "denied-by-default",
+  "dependency_change_policy": "maintainer-approval-required",
+  "application_merge": "disabled",
+  "application_deployment": "disabled",
+  "protected_path_policy_known": true,
+  "validation_services_attested": true,
+  "validation_execution": {
+    "mode": "maintainer-approved-unsandboxed",
+    "child_environment_credentials": "removed",
+    "repository_mutation": "detected-and-rejected",
+    "network_isolation": "not-provided",
+    "os_sandbox": "not-provided"
+  },
+  "validation_approval": {
+    "mode": "maintainer-approved-unsandboxed",
+    "approved_by": "anirudhsengar",
+    "approved_at": "2026-08-25T11:04:02.235Z",
+    "package_json_sha256": "6ea3e19871a9a05fa0c8b89595b6df05d23d266936b9785607128fd420864337",
+    "manifest_path": "package.json",
+    "lockfile": {
+      "path": "package-lock.json",
+      "sha256": "b92530c30cb2ab5770f24e632e60a8b031e2c90cc268b5c1ffe524907c84c233"
+    },
+    "commands_sha256": "1b754cb8e2de4f3daa44828fe4cfc8e422c065350ab956bb52a520b331db2e26"
+  },
+  "policy": {
+    "policy_digest": "5474563be0d5f3b24a973b006e803cfc53d4a01612bbc301a02dbb7328bb7fd3",
+    "approval_required": true,
+    "approval_ttl_ms": 86400000,
+    "maximum_cost_usd": 5,
+    "maximum_runtime_ms": 3600000,
+    "maximum_model_calls": 12,
+    "maximum_fix_cycles": 2,
+    "protected_paths": [
+      ".agentify/policies",
+      ".git",
+      ".github/agentify",
+      ".github/agentify-task-policy.json",
+      ".github/workflows",
+      "AGENTS.md",
+      "build.gradle",
+      "build.gradle.kts",
+      "bun.lock",
+      "Cargo.lock",
+      "Cargo.toml",
+      "Gemfile",
+      "Gemfile.lock",
+      "go.mod",
+      "go.sum",
+      "gradle.lockfile",
+      "makefile",
+      "Makefile",
+      "npm-shrinkwrap.json",
+      "package-lock.json",
+      "package.json",
+      "Pipfile",
+      "Pipfile.lock",
+      "pnpm-lock.yaml",
+      "poetry.lock",
+      "pom.xml",
+      "pyproject.toml",
+      "requirements.txt",
+      "SETUP.md",
+      "setup.py",
+      "uv.lock",
+      "yarn.lock"
+    ],
+    "allowed_write_paths": [
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "docs",
+      "eslint.config.js",
+      "examples",
+      "index.js",
+      "lib",
+      "LICENSE",
+      "package-support.json",
+      "Readme_zh-CN.md",
+      "Readme.md",
+      "SECURITY.md",
+      "tests",
+      "tsconfig.js.json",
+      "tsconfig.json",
+      "tsconfig.ts.json",
+      "typings"
+    ],
+    "validation_commands": [
+      {
+        "command_id": "test-audited-npm-run",
+        "argv": [
+          "npm",
+          "run",
+          "check:type"
+        ],
+        "cwd": ".",
+        "timeout_ms": 1800000,
+        "required": true,
+        "mutation_allowed": false,
+        "source": "repository-policy"
+      }
+    ],
+    "forbidden_actions": [
+      "application deployment",
+      "application merge",
+      "auto-merge",
+      "credential exposure",
+      "default-branch application write",
+      "force-push",
+      "policy expansion by model output",
+      "unapproved dependency change"
+    ]
+  },
+  "instructions": "This repository-specific policy was generated from verified repository identity, tracked application paths, passing validation commands, and installer attestation of unsandboxed repository validation."
+}
